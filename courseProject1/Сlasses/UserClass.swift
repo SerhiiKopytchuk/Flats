@@ -18,6 +18,7 @@ class User: Object{
     @objc dynamic var current = true
     @objc dynamic var isAutorized = false
     @objc dynamic var appPassword:String? = ""
-    @Persisted let flats = List<Flat>()
+    
+    let flats = List<Flat>()
     
 }
