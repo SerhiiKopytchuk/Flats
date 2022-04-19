@@ -7,17 +7,27 @@
 
 import UIKit
 
+protocol FriendsTableViewCellDelegate: AnyObject{
+    func addButtonPressed(userId:Int, name:String)
+}
+
 class FriendsTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var addButton: UIButton!
+    var userId:Int = 0
+    
+    weak var delegate: FriendsTableViewCellDelegate?
+
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    @IBAction func addButtonPressed(_ sender: UIButton) {
+        delegate?.addButtonPressed(userId:userId, name: nameLabel.text ?? "")
     }
+    
 
 }
