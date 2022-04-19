@@ -14,6 +14,8 @@ class mainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(Realm.Configuration.defaultConfiguration.fileURL ?? "")
+
         let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(SearchFlatsButtonPressed(_:)))
         leftSwipe.direction = .left
         self.view.addGestureRecognizer(leftSwipe)
@@ -46,14 +48,20 @@ class mainViewController: UIViewController {
             if user.appPassword == ""{
                 let controller = self.storyboard?.instantiateViewController(withIdentifier: "passwordViewController") as! passwordViewController
                 controller.text = "set password"
-                self.navigationController?.pushViewController(controller, animated: true)
+                self.navigationController?.pushViewController(controller, animated: false)
             }else{
                 let controller = self.storyboard?.instantiateViewController(withIdentifier: "passwordViewController") as! passwordViewController
                 controller.text = "password"
-                self.navigationController?.pushViewController(controller, animated: true)
+                self.navigationController?.pushViewController(controller, animated: false)
             }
         }
     }
+    
+    @IBAction func UsersButtonPressed(_ sender: UIButton) {
+        guard let controller = storyboard?.instantiateViewController(withIdentifier: "FriendsViewController") as? FriendsViewController else { return}
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
     
     @IBAction func sellButtonPressed(_ sender: UIButton) {
         let controller = self.storyboard?.instantiateViewController(withIdentifier:  "CreateFlatViewController") as! CreateFlatViewController

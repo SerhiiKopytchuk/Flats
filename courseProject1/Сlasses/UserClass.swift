@@ -10,6 +10,7 @@ import RealmSwift
 
 
 class User: Object{
+    
     @objc dynamic var id = 0
     @objc dynamic var name:String?
     @objc dynamic var password:String?
@@ -20,5 +21,13 @@ class User: Object{
     @objc dynamic var appPassword:String? = ""
     
     let flats = List<Flat>()
+    
+    let friendsId = List<Int>()
+    
+    static func getCurrentUser() -> User {
+        let realm = try! Realm()
+
+        return realm.objects(User.self).filter("current == true").first ?? User()
+    }
     
 }

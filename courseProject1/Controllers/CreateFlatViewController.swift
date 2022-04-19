@@ -132,7 +132,8 @@ class CreateFlatViewController: UIViewController {
         flat.FlatNum = flatNumber
         flat.floorNum = florNumber
         flat.id = id
-        flat.owner = user
+
+        
         //save images
         guard let flatImage = flatImgaView.image else {return}
         Manager.shared.store(image: flatImage, forKey: "\(id)FlatImage", withStorageType: .fileSystem)

@@ -88,7 +88,7 @@ class passwordViewController: UIViewController {
                     forthView.isHidden =  true
                 } else if mainLabel.text == "password"{
                     if user?.appPassword == password{
-                        self.navigationController?.popToRootViewController(animated: true)
+                        self.navigationController?.popToRootViewController(animated: false)
                     }else{
                         presentAlertWithTitle(title: "Incorrect password", message: "try another password", options: "retry") { (option) in
                             return
@@ -201,14 +201,12 @@ class passwordViewController: UIViewController {
             case 0:
                 return
             case 1:
-                
-                let realm = try! Realm()
-                let users = realm.objects(User.self)
-                realm.beginWrite()
+                let users = self.realm.objects(User.self)
+                self.realm.beginWrite()
                 for user in users{
                     user.current = false
                 }
-                try! realm.commitWrite()
+                try! self.realm.commitWrite()
                 
                 let controller = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
                 self.navigationController?.pushViewController(controller, animated: true)
