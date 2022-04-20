@@ -22,7 +22,7 @@ class User: Object{
     
     let flats = List<Flat>()
     
-    let friendsId = List<Int>()
+    var friendsId = List<Int>()
     
     static func getCurrentUser() -> User {
         let realm = try! Realm()

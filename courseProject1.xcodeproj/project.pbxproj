@@ -33,6 +33,8 @@
 		40E2942727DB4AC800A1B02F /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2942627DB4AC800A1B02F /* UIViewControllerExtension.swift */; };
 		40F69DE3280EBBCE0013A4FA /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F69DE2280EBBCE0013A4FA /* FriendsTableViewCell.swift */; };
 		40F69DE5280EBBE40013A4FA /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F69DE4280EBBE40013A4FA /* FriendsViewController.swift */; };
+		40F69DE7280EDA5D0013A4FA /* MyFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F69DE6280EDA5D0013A4FA /* MyFriendsViewController.swift */; };
+		40F69DE9280EDAFA0013A4FA /* MyFriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F69DE8280EDAFA0013A4FA /* MyFriendsTableViewCell.swift */; };
 		C0B11BE8DC5FAEE335A8140C /* Pods_courseProject1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D79C0F5D77CC99C5D6E6BF21 /* Pods_courseProject1.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +67,8 @@
 		40E2942627DB4AC800A1B02F /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		40F69DE2280EBBCE0013A4FA /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
 		40F69DE4280EBBE40013A4FA /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		40F69DE6280EDA5D0013A4FA /* MyFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFriendsViewController.swift; sourceTree = "<group>"; };
+		40F69DE8280EDAFA0013A4FA /* MyFriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFriendsTableViewCell.swift; sourceTree = "<group>"; };
 		6D7D586147BEED097D105E4E /* Pods-courseProject1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-courseProject1.release.xcconfig"; path = "Target Support Files/Pods-courseProject1/Pods-courseProject1.release.xcconfig"; sourceTree = "<group>"; };
 		D79C0F5D77CC99C5D6E6BF21 /* Pods_courseProject1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_courseProject1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAFB6897D9B807514745E3F3 /* Pods-courseProject1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-courseProject1.debug.xcconfig"; path = "Target Support Files/Pods-courseProject1/Pods-courseProject1.debug.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +120,7 @@
 				40AAE6A227D5F838003D4345 /* passwordViewController.swift */,
 				40ADD07F27D8A95A0021BC7C /* userViewController.swift */,
 				40F69DE4280EBBE40013A4FA /* FriendsViewController.swift */,
+				40F69DE6280EDA5D0013A4FA /* MyFriendsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -171,6 +176,7 @@
 			children = (
 				40D5B9BE27CAD4BD000794A4 /* MyFlatsTableViewCell.swift */,
 				40F69DE2280EBBCE0013A4FA /* FriendsTableViewCell.swift */,
+				40F69DE8280EDAFA0013A4FA /* MyFriendsTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -306,7 +312,9 @@
 				40501BB427DCEDD800F575A1 /* Manager.swift in Sources */,
 				4000738627D7B5F900F9D45B /* textFieldDelegate.swift in Sources */,
 				40ADD08027D8A95A0021BC7C /* userViewController.swift in Sources */,
+				40F69DE7280EDA5D0013A4FA /* MyFriendsViewController.swift in Sources */,
 				4067942427C0380700620F9D /* UserClass.swift in Sources */,
+				40F69DE9280EDAFA0013A4FA /* MyFriendsTableViewCell.swift in Sources */,
 				40BEB30427CB96E7009747DA /* EditOrDeleteFlatViewController.swift in Sources */,
 				4067942727C03ACB00620F9D /* extensions.swift in Sources */,
 				404D907327C2826A008D283F /* AccountViewController.swift in Sources */,
