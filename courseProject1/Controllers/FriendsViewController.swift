@@ -39,7 +39,6 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsTableViewCell") as? FriendsTableViewCell else {return UITableViewCell()}
         let realm = try! Realm()
-        //        print(indexPath.row)
         let users = realm.objects(User.self).filter("current == false")
         cell.delegate = self
         cell.nameLabel.text = users[indexPath.row].name
@@ -48,6 +47,16 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource{
         
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        friendsTableView.deselectRow(at: indexPath, animated: true)
+        let realm = try! Realm()
+        let users = realm.objects(User.self).filter("current == false")
+        let user = users[indexPath.row]
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "userViewController") as! userViewController
+        controller.userId = user.id 
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     

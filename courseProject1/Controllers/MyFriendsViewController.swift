@@ -50,6 +50,16 @@ extension MyFriendsViewController:UITableViewDelegate, UITableViewDataSource{
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        myFriendsTableView.deselectRow(at: indexPath, animated: true)
+        let realm = try! Realm()
+        let user = realm.objects(User.self).filter("current == true").first
+        let friendsId = user?.friendsId
+        let friend = realm.objects(User.self).filter("id == \(friendsId?[indexPath.row] ?? 0)").first
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "userViewController") as! userViewController
+        controller.userId = friend?.id ?? 0
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
     
 }
 
