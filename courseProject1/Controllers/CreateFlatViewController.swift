@@ -130,6 +130,7 @@ class CreateFlatViewController: UIViewController {
         let ownerId:Int = user?.id ?? 0
 
         flat.ownerId = ownerId
+        flat.owner = user
         
     
         

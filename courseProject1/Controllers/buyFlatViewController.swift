@@ -55,7 +55,7 @@ class buyFlatViewController: UIViewController {
             case 0:
                 return
             case 1:
-                let user = self.realm.objects(User.self).filter("current == true").first
+                let user = User.getCurrentUser()
                 let flat = self.realm.objects(Flat.self).filter("id == \(self.id)").first
                 self.realm.beginWrite()
                 
@@ -71,9 +71,9 @@ class buyFlatViewController: UIViewController {
                 
                 FormerOwner.flats.remove(at: index)
                 
-                flat?.ownerId = user?.id ?? 0
+                flat?.ownerId = user.id
                 flat!.owner = user
-                user?.flats.append(flat ?? Flat())
+                user.flats.append(flat ?? Flat())
                 try! self.realm.commitWrite()
                 self.navigationController?.popToRootViewController(animated: true)
             default:

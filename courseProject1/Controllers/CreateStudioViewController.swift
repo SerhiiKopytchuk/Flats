@@ -123,7 +123,8 @@ class CreateStudioViewController: UIViewController {
         let ownerId:Int = user?.id ?? 0
 
         studio.ownerId = ownerId
-        
+        studio.owner = user
+
     
         
         realm.beginWrite()

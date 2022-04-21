@@ -372,22 +372,48 @@ class searchFlatsViewController: UIViewController {
 extension searchFlatsViewController: UITableViewDelegate, UITableViewDataSource{
     
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section{
+        case 0:
+            return "flats"
+        case 1:
+            return "studios"
+        default:
+            return "noinfo"
+        }
+        
+    }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let user = User.getCurrentUser()
+        let realm = try! Realm()
+        let user = realm.objects(User.self).filter("current == true").first
         
         let startPrice: Int = UserDefaults.standard.object(forKey: "startPriceFilter") as? Int ?? 0
         let endPrice: Int = UserDefaults.standard.object(forKey: "endPriceFilter") as? Int ?? Int.max
         
-        let flats = realm.objects(Flat.self).filter("owner.id != \(user.id)").filter("price > \(startPrice)  AND price < \(endPrice)")
+        let flats = realm.objects(Flat.self).filter("owner.id != \(user?.id ?? 0)").filter("price > \(startPrice)  AND price < \(endPrice)")
+        let studios = realm.objects(Studio.self).filter("owner.id != \(user?.id ?? 0)").filter("price > \(startPrice)  AND price < \(endPrice)")
         
-        return flats.count
+        switch section{
+        case 0:
+            return flats.count
+        case 1:
+            return studios.count
+        default:
+            return 0
+        }
+       
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellID) as! MyFlatsTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellID) as? MyFlatsTableViewCell else {
+            return UITableViewCell()
+        }
         
         
         //sort that
@@ -395,45 +421,73 @@ extension searchFlatsViewController: UITableViewDelegate, UITableViewDataSource{
         let startPrice: Int = UserDefaults.standard.object(forKey: "startPriceFilter") as? Int ?? 0
         let endPrice: Int = UserDefaults.standard.object(forKey: "endPriceFilter") as? Int ?? Int.max
     
-        let user = User.getCurrentUser()
+        let user = realm.objects(User.self).filter("current == true").first
         
         let flats: Results<Flat>
+        let studios: Results<Studio>
         
         switch sortBy{
         case 0:
-            flats = realm.objects(Flat.self).filter("owner.id != \(user.id)").filter("price > \(startPrice)  AND price < \(endPrice)")
+            flats = realm.objects(Flat.self).filter("owner.id != \(user?.id ?? 0)").filter("price > \(startPrice)  AND price < \(endPrice)")
+            studios = realm.objects(Studio.self).filter("owner.id != \(user?.id ?? 0)").filter("price > \(startPrice)  AND price < \(endPrice)")
         case 1:
-            flats = realm.objects(Flat.self).filter("owner.id != \(user.id)").sorted(byKeyPath: "price", ascending: true).filter("price > \(startPrice)  AND price < \(endPrice)")
+            flats = realm.objects(Flat.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "price", ascending: true).filter("price > \(startPrice)  AND price < \(endPrice)")
+            studios = realm.objects(Studio.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "price", ascending: true).filter("price > \(startPrice)  AND price < \(endPrice)")
         case 2:
-            flats = realm.objects(Flat.self).filter("owner.id != \(user.id)").sorted(byKeyPath: "price", ascending: false).filter("price > \(startPrice)  AND price < \(endPrice)")
+            flats = realm.objects(Flat.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "price", ascending: false).filter("price > \(startPrice)  AND price < \(endPrice)")
+            studios = realm.objects(Studio.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "price", ascending: false).filter("price > \(startPrice)  AND price < \(endPrice)")
         case 3:
-            flats = realm.objects(Flat.self).filter("owner.id != \(user.id)").sorted(byKeyPath: "rooms", ascending: true).filter("price > \(startPrice)  AND price < \(endPrice)")
+            flats = realm.objects(Flat.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "rooms", ascending: true).filter("price > \(startPrice)  AND price < \(endPrice)")
+            studios = realm.objects(Studio.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "rooms", ascending: true).filter("price > \(startPrice)  AND price < \(endPrice)")
         case 4:
-            flats = realm.objects(Flat.self).filter("owner.id != \(user.id)").sorted(byKeyPath: "rooms", ascending: false).filter("price > \(startPrice)  AND price < \(endPrice)")
+            flats = realm.objects(Flat.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "rooms", ascending: false).filter("price > \(startPrice)  AND price < \(endPrice)")
+            studios = realm.objects(Studio.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "rooms", ascending: false).filter("price > \(startPrice)  AND price < \(endPrice)")
         case 5:
-            flats = realm.objects(Flat.self).filter("owner.id != \(user.id)").sorted(byKeyPath: "square", ascending: true).filter("price > \(startPrice)  AND price < \(endPrice)")
+            flats = realm.objects(Flat.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "square", ascending: true).filter("price > \(startPrice)  AND price < \(endPrice)")
+            studios = realm.objects(Studio.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "square", ascending: true).filter("price > \(startPrice)  AND price < \(endPrice)")
         case 6:
-            flats = realm.objects(Flat.self).filter("owner.id != \(user.id)").sorted(byKeyPath: "square", ascending: false).filter("price > \(startPrice)  AND price < \(endPrice)")
+            flats = realm.objects(Flat.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "square", ascending: false).filter("price > \(startPrice)  AND price < \(endPrice)")
+            studios = realm.objects(Studio.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "square", ascending: false).filter("price > \(startPrice)  AND price < \(endPrice)")
         case 7:
-            flats = realm.objects(Flat.self).filter("owner.id != \(user.id)").sorted(byKeyPath: "floorNum", ascending: true).filter("price > \(startPrice)  AND price < \(endPrice)")
+            flats = realm.objects(Flat.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "floorNum", ascending: true).filter("price > \(startPrice)  AND price < \(endPrice)")
+            studios = realm.objects(Studio.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "floorNum", ascending: true).filter("price > \(startPrice)  AND price < \(endPrice)")
         case 8:
-            flats = realm.objects(Flat.self).filter("owner.id != \(user.id)").sorted(byKeyPath: "floorNum", ascending: false).filter("price > \(startPrice)  AND price < \(endPrice)")
+            flats = realm.objects(Flat.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "floorNum", ascending: false).filter("price > \(startPrice)  AND price < \(endPrice)")
+            studios = realm.objects(Studio.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "floorNum", ascending: false).filter("price > \(startPrice)  AND price < \(endPrice)")
         case 9:
-            flats = realm.objects(Flat.self).filter("owner.id != \(user.id)").sorted(byKeyPath: "createdDate", ascending: true).filter("price > \(startPrice)  AND price < \(endPrice)")
+            flats = realm.objects(Flat.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "createdDate", ascending: true).filter("price > \(startPrice)  AND price < \(endPrice)")
+            studios = realm.objects(Studio.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "createdDate", ascending: true).filter("price > \(startPrice)  AND price < \(endPrice)")
         case 10:
-            flats = realm.objects(Flat.self).filter("owner.id != \(user.id)").sorted(byKeyPath: "createdDate", ascending: false).filter("price > \(startPrice)  AND price < \(endPrice)")
+            flats = realm.objects(Flat.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "createdDate", ascending: false).filter("price > \(startPrice)  AND price < \(endPrice)")
+            studios = realm.objects(Studio.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "createdDate", ascending: false).filter("price > \(startPrice)  AND price < \(endPrice)")
         default:
-            flats = realm.objects(Flat.self).filter("owner.id != \(user.id)").filter("price > \(startPrice)  AND price < \(endPrice)")
+            flats = realm.objects(Flat.self).filter("owner.id != \(user?.id ?? 0)").filter("price > \(startPrice)  AND price < \(endPrice)")
+            studios = realm.objects(Studio.self).filter("owner.id != \(user?.id ?? 0)").filter("price > \(startPrice)  AND price < \(endPrice)")
         }
         
         
         
         
-        let flat = flats[indexPath.row]
+      
+       
         
-        let flatImage = Manager.shared.retrieveImage(forKey: "\(flat.id )FlatImage", inStorageType: .fileSystem)
+       
+       
         
-        cell.configuration(name: (flat.name ?? ""), price: String(flat.price ) + "$" ,image: flatImage ?? UIImage())
+        switch indexPath.section{
+        case 0:
+            let flat = flats[indexPath.row]
+            let flatImage = Manager.shared.retrieveImage(forKey: "\(flat.id )FlatImage", inStorageType: .fileSystem)
+            cell.configuration(name: (flat.name ?? ""), price: String(flat.price ) + "$" ,image: flatImage ?? UIImage())
+        case 1:
+            let studio = studios[indexPath.row]
+            let studioImage = Manager.shared.retrieveImage(forKey: "\(studio.id )StudioImage", inStorageType: .fileSystem)
+            cell.configuration(name: (studio.name ?? ""), price: String(studio.price ) + "$" ,image: studioImage ?? UIImage())
+            
+        default:
+            break
+        }
+       
         
         return cell
     }
