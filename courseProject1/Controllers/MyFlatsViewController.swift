@@ -40,10 +40,33 @@ class MyFlatsViewController: UIViewController {
 }
 
 extension MyFlatsViewController: UITableViewDelegate, UITableViewDataSource{
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section{
+        case 0:
+            return "flats"
+        case 1:
+            return "studios"
+        default:
+            return "noinfo"
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let user = realm.objects(User.self).filter("current == true").first
-
-        return user?.flats.count ?? 0
+        
+        switch section{
+        case 0:
+            return user?.flats.count ?? 0
+        case 1:
+            return user?.studios.count ?? 0
+        default:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -51,14 +74,18 @@ extension MyFlatsViewController: UITableViewDelegate, UITableViewDataSource{
         let user = realm.objects(User.self).filter("current == true").first
 
         
-        
-        let flat = user?.flats[indexPath.row]
-        
-        let flatImage = Manager.shared.retrieveImage(forKey: "\(flat?.id ?? 0)FlatImage", inStorageType: .fileSystem)
-
-    
-        cell.configuration(name: flat?.name ?? "" , price: String(flat?.price ?? 0) + "$" ,image: flatImage ?? UIImage())
-
+        switch indexPath.section{
+        case 0:
+            let flat = user?.flats[indexPath.row]
+            let flatImage = Manager.shared.retrieveImage(forKey: "\(flat?.id ?? 0)FlatImage", inStorageType: .fileSystem)
+            cell.configuration(name: flat?.name ?? "" , price: String(flat?.price ?? 0) + "$" ,image: flatImage ?? UIImage())
+        case 1:
+            let studio = user?.studios[indexPath.row]
+            let studioImage = Manager.shared.retrieveImage(forKey: "\(studio?.id ?? 0)StudioImage", inStorageType: .fileSystem)
+            cell.configuration(name: studio?.name ?? "" , price: String(studio?.price ?? 0) + "$" ,image: studioImage ?? UIImage())
+        default:
+            return cell
+        }
         
         return cell
     }
@@ -66,11 +93,22 @@ extension MyFlatsViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
 
-        let controller = self.storyboard?.instantiateViewController(withIdentifier:  "EditOrDeleteFlatViewController") as! EditOrDeleteFlatViewController
-        let user = realm.objects(User.self).filter("current == true").first
-        let flat = user?.flats[indexPath.row]
-        controller.id = flat?.id ?? 0
-
-        self.navigationController?.pushViewController(controller, animated: true)
+        
+        switch indexPath.section{
+        case 0:
+            let controller = self.storyboard?.instantiateViewController(withIdentifier:  "EditOrDeleteFlatViewController") as! EditOrDeleteFlatViewController
+            let user = realm.objects(User.self).filter("current == true").first
+            let flat = user?.flats[indexPath.row]
+            controller.id = flat?.id ?? 0
+            self.navigationController?.pushViewController(controller, animated: true)
+        case 1:
+            let controller = self.storyboard?.instantiateViewController(withIdentifier:  "EditOrDelStudioViewController") as! EditOrDelStudioViewController
+            let user = realm.objects(User.self).filter("current == true").first
+            let studio = user?.studios[indexPath.row]
+            controller.id = studio?.id ?? 0
+            self.navigationController?.pushViewController(controller, animated: true)
+        default:
+            return
+        }
     }
 }
