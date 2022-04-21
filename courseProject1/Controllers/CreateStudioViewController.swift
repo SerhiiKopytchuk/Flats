@@ -1,29 +1,30 @@
 //
-//  CreateFlatViewController.swift
+//  CreateStudioViewController.swift
 //  courseProject1
 //
-//  Created by Serhii Kopytchuk on 23.02.2022.
+//  Created by Serhii Kopytchuk on 21.04.2022.
 //
 
 import UIKit
 import RealmSwift
-import SwiftUI
 
-class CreateFlatViewController: UIViewController {
+class CreateStudioViewController: UIViewController {
+
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var aboutTextView: UITextView!
+    @IBOutlet weak var peopleCapacityTextField: UITextField!
+    @IBOutlet weak var haveShowerSwitch: UISwitch!
+    @IBOutlet weak var haveRelaxRoomSwitch: UISwitch!
     @IBOutlet weak var squareTextField: UITextField!
     @IBOutlet weak var roomsTextField: UITextField!
-    @IBOutlet weak var cityPicker: UIPickerView!
+    @IBOutlet weak var sityPickerView: UIPickerView!
     @IBOutlet weak var streetTextField: UITextField!
     @IBOutlet weak var buildingNumberTextField: UITextField!
-    @IBOutlet weak var flatTextField: UITextField!
+    @IBOutlet weak var flatNumberTextField: UITextField!
     @IBOutlet weak var florTextField: UITextField!
+    @IBOutlet weak var studioImageView: UIImageView!
     @IBOutlet weak var priceTextField: UITextField!
-    @IBOutlet weak var flatImgaView: UIImageView!
-    
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var addPhotoButton: UIButton!
     
     var city:String?
     var standartImage:UIImage?
@@ -43,45 +44,37 @@ class CreateFlatViewController: UIViewController {
         "Вінниця"
     ]
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        
         city = cities.first
-        registerForKeyboardNotifications()
         
-        standartImage = flatImgaView.image
         
-        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(backButtonPressed(_:)))
-        rightSwipe.direction = .right
-        self.view.addGestureRecognizer(rightSwipe)
+        standartImage = studioImageView.image
+        
         
     }
     
-    
+
+    @IBAction func backButtonPressed(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     @IBAction func addPhotoButtonPressed(_ sender: UIButton) {
         showPicker()
     }
     
+    @IBAction func DeleteButtonPressed(_ sender: UIButton) {
+       studioImageView.image = standartImage
+    }
     
     override func handlePickedImage(_ image: UIImage) {
-        flatImgaView.image = image
-    }
-    
-    @IBAction func deletePhotoButtonPressed(_ sender: UIButton) {
-        flatImgaView.image = standartImage
-    }
-    
-    
-    
-    
-    
-    @IBAction func backButtonPressed(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
+        studioImageView.image = image
     }
     
     @IBAction func sellButtonPressed(_ sender: UIButton) {
-
+        
         if !checkEmptyTextFields(){
             return
         }
@@ -95,56 +88,58 @@ class CreateFlatViewController: UIViewController {
         
         let user = realm.objects(User.self).filter("current == true").first
         
-        
-   
         let price = Int(priceTextField.text ?? "") ?? 0
         let square = Int(squareTextField.text ?? "") ?? 0
         let rooms = Int(roomsTextField.text ?? "") ?? 0
         let buildingNumber = Int(buildingNumberTextField.text ?? "") ?? 0
-        let flatNumber = Int(flatTextField.text ?? "") ?? 0
+        let flatNumber = Int(flatNumberTextField.text ?? "") ?? 0
         let florNumber = Int(florTextField.text ?? "") ?? 0
+        let peopleCapacity = Int(peopleCapacityTextField.text ?? "") ?? 0
         
-        let id = realm.objects(Flat.self).count + 1
-       
-        let flat = Flat()
+        let id = realm.objects(Studio.self).count + 1
         
-        flat.name = nameTextField.text
-        flat.about = aboutTextView.text
-        flat.sity = city
-        flat.street = streetTextField.text
-        flat.createdDate = Date.now
-        flat.price = price
-        flat.square = square
-        flat.rooms = rooms
-        flat.BuildingNum = buildingNumber
-        flat.FlatNum = flatNumber
-        flat.floorNum = florNumber
-        flat.id = id
-
+        let studio = Studio()
         
-        //save images
-        guard let flatImage = flatImgaView.image else {return}
-        Manager.shared.store(image: flatImage, forKey: "\(id)FlatImage", withStorageType: .fileSystem)
+        studio.name = nameTextField.text
+        studio.about = aboutTextView.text
+        studio.sity = city
+        studio.street = streetTextField.text
+        studio.createdDate = Date.now
+        studio.price = price
+        studio.square = square
+        studio.rooms = rooms
+        studio.BuildingNum = buildingNumber
+        studio.FlatNum = flatNumber
+        studio.floorNum = florNumber
+        studio.id = id
+        studio.peopleCapacity = peopleCapacity
+        studio.haveShower = haveShowerSwitch.isOn
+        studio.haveRelaxRoom = haveRelaxRoomSwitch.isOn
         
-
+        
+        guard let studioImage = studioImageView.image else {return}
+        Manager.shared.store(image: studioImage, forKey: "\(id)StudioImage", withStorageType: .fileSystem)
+        
         let ownerId:Int = user?.id ?? 0
 
-        flat.ownerId = ownerId
-        flat.owner = user
-        
+        studio.ownerId = ownerId
+        studio.owner = user
+
     
         
         realm.beginWrite()
-        user?.flats.append(flat)
-        realm.add(flat)
+        user?.studios.append(studio)
+        realm.add(studio)
         try! realm.commitWrite()
         
         self.navigationController?.popToRootViewController(animated: true)
     }
     
     
-    
     func canConvertToInt()->Bool{
+        guard let peopleCapacity = peopleCapacityTextField.text else{
+            return false
+        }
         guard let price = priceTextField.text else{
             return false
         }
@@ -157,10 +152,14 @@ class CreateFlatViewController: UIViewController {
         guard let buildingNumber = buildingNumberTextField.text else{
             return false
         }
-        guard let flatNumber = flatTextField.text else{
+        guard let flatNumber = flatNumberTextField.text else{
             return false
         }
         guard let flor = florTextField.text else{
+            return false
+        }
+        guard let _ = Int(peopleCapacity)  else{
+            alertFieldsMustContainsOnlyNumbers()
             return false
         }
         guard let _ = Int(price)  else{
@@ -234,7 +233,7 @@ class CreateFlatViewController: UIViewController {
             }
             return false
         }
-        if flatTextField.text == ""{
+        if flatNumberTextField.text == ""{
             presentAlertWithTitle(title: "Flat field is empty", message: "write number of your flat", options: "close") { (option) in
                 return
             }
@@ -254,33 +253,9 @@ class CreateFlatViewController: UIViewController {
         }
         return true
     }
-
-    
-    private func registerForKeyboardNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    @objc private func keyboardWillShow(_ notification: NSNotification) {
-        guard let userInfo = notification.userInfo,
-              let animationDuration = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue,
-              let keyboardScreenEndFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
-        
-        if notification.name == UIResponder.keyboardWillHideNotification {
-            bottomConstraint.constant = 0
-        } else {
-            bottomConstraint.constant = keyboardScreenEndFrame.height + 10
-        }
-        
-        view.needsUpdateConstraints()
-        UIView.animate(withDuration: animationDuration) {
-            self.view.layoutIfNeeded()
-        }
-    }
-    
 }
 
-extension CreateFlatViewController: UIPickerViewDelegate, UIPickerViewDataSource{
+extension CreateStudioViewController: UIPickerViewDelegate, UIPickerViewDataSource{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -298,6 +273,3 @@ extension CreateFlatViewController: UIPickerViewDelegate, UIPickerViewDataSource
     }
     
 }
-
-
-

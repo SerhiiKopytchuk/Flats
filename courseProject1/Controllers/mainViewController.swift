@@ -35,6 +35,7 @@ class mainViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         let realm = try! Realm()
         
         guard let user = realm.objects(User.self).filter("current == true").first else{
@@ -62,9 +63,13 @@ class mainViewController: UIViewController {
         navigationController?.pushViewController(controller, animated: true)
     }
     
+    @IBAction func myFriendsButtonPressed(_ sender: UIButton) {
+        guard let controller = storyboard?.instantiateViewController(withIdentifier: "MyFriendsViewController") as? MyFriendsViewController else { return}
+        navigationController?.pushViewController(controller, animated: true)
+    }
     
     @IBAction func sellButtonPressed(_ sender: UIButton) {
-        let controller = self.storyboard?.instantiateViewController(withIdentifier:  "CreateFlatViewController") as! CreateFlatViewController
+        let controller = self.storyboard?.instantiateViewController(withIdentifier:  "ChooseFlatOrStudioViewController") as! ChooseFlatOrStudioViewController
         self.navigationController?.pushViewController(controller, animated: true)
     }
     

@@ -31,3 +31,4 @@ class Flat: Object{
     
     @objc dynamic var owner: User?
 }
+

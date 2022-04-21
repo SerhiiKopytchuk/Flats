@@ -21,8 +21,10 @@ class User: Object{
     @objc dynamic var appPassword:String? = ""
     
     let flats = List<Flat>()
+    let studios = List<Studio>()
+
     
-    let friendsId = List<Int>()
+    var friendsId = List<Int>()
     
     static func getCurrentUser() -> User {
         let realm = try! Realm()
