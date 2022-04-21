@@ -38,7 +38,7 @@ class searchFlatsViewController: UIViewController {
     
     let realm = try! Realm()
     let cellID = "MyFlatsTableViewCell"
-    let id:Int = UserDefaults.standard.value(forKey: "userId") as! Int
+//    let id:Int = UserDefaults.standard.value(forKey: "userId") as! Int
     
     
     
