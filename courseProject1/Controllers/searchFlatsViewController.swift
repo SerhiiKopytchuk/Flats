@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import SwiftUI
 class searchFlatsViewController: UIViewController {
     
     //MARK: - IBOutelets
@@ -493,12 +494,92 @@ extension searchFlatsViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let user = User.getCurrentUser()
-        let controller = self.storyboard?.instantiateViewController(withIdentifier:  "buyFlatViewController") as! buyFlatViewController
-        let flats = realm.objects(Flat.self).filter("owner.id != \(user.id)")
-        let flat = flats[indexPath.row]
-        controller.id = flat.id
         
-        self.navigationController?.pushViewController(controller, animated: true)
+        let user = realm.objects(User.self).filter("current == true").first
+                
+        let sortBy = UserDefaults.standard.object(forKey: "sortBy") as! Int
+        let startPrice: Int = UserDefaults.standard.object(forKey: "startPriceFilter") as? Int ?? 0
+        let endPrice: Int = UserDefaults.standard.object(forKey: "endPriceFilter") as? Int ?? Int.max
+        
+        switch indexPath.section{
+        case 0:
+            
+            let controller = self.storyboard?.instantiateViewController(withIdentifier:  "buyFlatViewController") as! buyFlatViewController
+
+            let flats: Results<Flat>
+            
+            
+            switch sortBy{
+            case 0:
+                flats = realm.objects(Flat.self).filter("owner.id != \(user?.id ?? 0)").filter("price > \(startPrice)  AND price < \(endPrice)")
+            case 1:
+                flats = realm.objects(Flat.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "price", ascending: true).filter("price > \(startPrice)  AND price < \(endPrice)")
+        case 2:
+                flats = realm.objects(Flat.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "price", ascending: false).filter("price > \(startPrice)  AND price < \(endPrice)")
+         case 3:
+                flats = realm.objects(Flat.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "rooms", ascending: true).filter("price > \(startPrice)  AND price < \(endPrice)")
+        case 4:
+                flats = realm.objects(Flat.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "rooms", ascending: false).filter("price > \(startPrice)  AND price < \(endPrice)")
+         case 5:
+                flats = realm.objects(Flat.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "square", ascending: true).filter("price > \(startPrice)  AND price < \(endPrice)")
+         case 6:
+                flats = realm.objects(Flat.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "square", ascending: false).filter("price > \(startPrice)  AND price < \(endPrice)")
+            case 7:
+                flats = realm.objects(Flat.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "floorNum", ascending: true).filter("price > \(startPrice)  AND price < \(endPrice)")
+            case 8:
+                flats = realm.objects(Flat.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "floorNum", ascending: false).filter("price > \(startPrice)  AND price < \(endPrice)")
+            case 9:
+                flats = realm.objects(Flat.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "createdDate", ascending: true).filter("price > \(startPrice)  AND price < \(endPrice)")
+            case 10:
+                flats = realm.objects(Flat.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "createdDate", ascending: false).filter("price > \(startPrice)  AND price < \(endPrice)")
+            default:
+                flats = realm.objects(Flat.self).filter("owner.id != \(user?.id ?? 0)").filter("price > \(startPrice)  AND price < \(endPrice)")
+            }
+            
+            
+            let flat = flats[indexPath.row]
+            controller.id = flat.id
+            self.navigationController?.pushViewController(controller, animated: true)
+            
+        case 1:
+           
+            let studios: Results<Studio>
+            
+            switch sortBy{
+            case 0:
+
+                studios = realm.objects(Studio.self).filter("owner.id != \(user?.id ?? 0)").filter("price > \(startPrice)  AND price < \(endPrice)")
+            case 1:
+                studios = realm.objects(Studio.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "price", ascending: true).filter("price > \(startPrice)  AND price < \(endPrice)")
+            case 2:
+                studios = realm.objects(Studio.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "price", ascending: false).filter("price > \(startPrice)  AND price < \(endPrice)")
+            case 3:
+                studios = realm.objects(Studio.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "rooms", ascending: true).filter("price > \(startPrice)  AND price < \(endPrice)")
+            case 4:
+                studios = realm.objects(Studio.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "rooms", ascending: false).filter("price > \(startPrice)  AND price < \(endPrice)")
+            case 5:
+                studios = realm.objects(Studio.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "square", ascending: true).filter("price > \(startPrice)  AND price < \(endPrice)")
+            case 6:
+                studios = realm.objects(Studio.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "square", ascending: false).filter("price > \(startPrice)  AND price < \(endPrice)")
+            case 7:
+                studios = realm.objects(Studio.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "floorNum", ascending: true).filter("price > \(startPrice)  AND price < \(endPrice)")
+            case 8:
+                studios = realm.objects(Studio.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "floorNum", ascending: false).filter("price > \(startPrice)  AND price < \(endPrice)")
+            case 9:
+                studios = realm.objects(Studio.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "createdDate", ascending: true).filter("price > \(startPrice)  AND price < \(endPrice)")
+            case 10:
+                studios = realm.objects(Studio.self).filter("owner.id != \(user?.id ?? 0)").sorted(byKeyPath: "createdDate", ascending: false).filter("price > \(startPrice)  AND price < \(endPrice)")
+            default:
+                studios = realm.objects(Studio.self).filter("owner.id != \(user?.id ?? 0)").filter("price > \(startPrice)  AND price < \(endPrice)")
+            }
+            
+            guard let controller = self.storyboard?.instantiateViewController(withIdentifier:  "buyStudioViewController") as? buyStudioViewController else {return}
+            
+            let studio = studios[indexPath.row]
+            controller.id = studio.id
+            self.navigationController?.pushViewController(controller, animated: true)
+        default:
+            return
+        }
     }
 }

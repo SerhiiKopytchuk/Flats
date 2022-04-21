@@ -35,6 +35,7 @@ class mainViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         let realm = try! Realm()
         
         guard let user = realm.objects(User.self).filter("current == true").first else{
