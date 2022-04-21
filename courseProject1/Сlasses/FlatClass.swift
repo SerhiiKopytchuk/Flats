@@ -32,10 +32,3 @@ class Flat: Object{
     @objc dynamic var owner: User?
 }
 
-class Studio:Flat{
-    
-    @objc dynamic var peopleCapacity = 0
-    @objc dynamic var haveShower = false
-    @objc dynamic var haveRelaxRoom = false
-    
-}

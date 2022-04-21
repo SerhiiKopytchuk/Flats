@@ -23,6 +23,7 @@
 		40BEB30627CBAB75009747DA /* searchFlatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BEB30527CBAB75009747DA /* searchFlatsViewController.swift */; };
 		40C114E72811739C008C2F33 /* EditOrDelStudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C114E62811739C008C2F33 /* EditOrDelStudioViewController.swift */; };
 		40C114E92811807F008C2F33 /* buyStudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C114E82811807F008C2F33 /* buyStudioViewController.swift */; };
+		40C114EB2811AEB8008C2F33 /* StudioClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C114EA2811AEB8008C2F33 /* StudioClass.swift */; };
 		40C3844E27CCCFF8000865AF /* buyFlatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C3844D27CCCFF8000865AF /* buyFlatViewController.swift */; };
 		40C7D4D927C64E8200573E97 /* CreateFlatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C7D4D827C64E8200573E97 /* CreateFlatViewController.swift */; };
 		40D2DA4427C0370200302D30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D2DA4327C0370200302D30 /* AppDelegate.swift */; };
@@ -61,6 +62,7 @@
 		40BEB30527CBAB75009747DA /* searchFlatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchFlatsViewController.swift; sourceTree = "<group>"; };
 		40C114E62811739C008C2F33 /* EditOrDelStudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditOrDelStudioViewController.swift; sourceTree = "<group>"; };
 		40C114E82811807F008C2F33 /* buyStudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buyStudioViewController.swift; sourceTree = "<group>"; };
+		40C114EA2811AEB8008C2F33 /* StudioClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudioClass.swift; sourceTree = "<group>"; };
 		40C3844D27CCCFF8000865AF /* buyFlatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buyFlatViewController.swift; sourceTree = "<group>"; };
 		40C7D4D827C64E8200573E97 /* CreateFlatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFlatViewController.swift; sourceTree = "<group>"; };
 		40D2DA4027C0370200302D30 /* courseProject1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = courseProject1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +150,7 @@
 				4067941C27C0380700620F9D /* UserClass.swift */,
 				40EB67952811458B003C0C33 /* AdminClass.swift */,
 				4067941D27C0380700620F9D /* FlatClass.swift */,
+				40C114EA2811AEB8008C2F33 /* StudioClass.swift */,
 			);
 			path = "Сlasses";
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				40D2DA4427C0370200302D30 /* AppDelegate.swift in Sources */,
 				40EB679A2811543B003C0C33 /* ChooseFlatOrStudioViewController.swift in Sources */,
 				40F69DE3280EBBCE0013A4FA /* FriendsTableViewCell.swift in Sources */,
+				40C114EB2811AEB8008C2F33 /* StudioClass.swift in Sources */,
 				4067941F27C0380700620F9D /* mainViewController.swift in Sources */,
 				40501BB427DCEDD800F575A1 /* Manager.swift in Sources */,
 				4000738627D7B5F900F9D45B /* textFieldDelegate.swift in Sources */,

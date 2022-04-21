@@ -54,35 +54,79 @@ class userViewController: UIViewController {
 }
 
 extension userViewController: UITableViewDelegate, UITableViewDataSource{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section{
+        case 0:
+            return "flats"
+        case 1:
+            return "studios"
+        default:
+            return "none"
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let user = realm.objects(User.self).filter("id == \(userId)").first
-
-        return user?.flats.count ?? 0
+        switch section{
+        case 0:
+            return user?.flats.count ?? 0
+        case 1:
+            return user?.studios.count ?? 0
+        default:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID) as! MyFlatsTableViewCell
         let user = realm.objects(User.self).filter("id == \(userId)").first
 
+        switch indexPath.section{
+        case 0:
+            let flat = user?.flats[indexPath.row]
+            
+            cell.mainLabel.text = flat?.name
+            cell.priceLabel.text = String(flat?.price ?? 0) + "$"
+        case 1:
+            let studio = user?.studios[indexPath.row]
+            cell.mainLabel.text = studio?.name
+            cell.priceLabel.text = String(studio?.price ?? 0) + "$"
+        default:
+            break
+        }
         
         
-        let flat = user?.flats[indexPath.row]
-        
-        cell.mainLabel.text = flat?.name
-        cell.priceLabel.text = String(flat?.price ?? 0) + "$"
          
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        switch indexPath.section{
+        case 0:
+            let controller = self.storyboard?.instantiateViewController(withIdentifier:  "buyFlatViewController") as! buyFlatViewController
+            controller.fromUser = true
+            let user = realm.objects(User.self).filter("id == \(userId)").first
+            let flat = user?.flats[indexPath.row]
+            controller.id = flat?.id ?? 0
 
+            self.navigationController?.pushViewController(controller, animated: true)
+        case 1:
+            let controller = self.storyboard?.instantiateViewController(withIdentifier:  "buyStudioViewController") as! buyStudioViewController
+            controller.fromUser = true
+            let user = realm.objects(User.self).filter("id == \(userId)").first
+            let studio = user?.studios[indexPath.row]
+            controller.id = studio?.id ?? 0
 
-        let controller = self.storyboard?.instantiateViewController(withIdentifier:  "buyFlatViewController") as! buyFlatViewController
-        controller.fromUser = true
-        let user = realm.objects(User.self).filter("id == \(userId)").first
-        let flat = user?.flats[indexPath.row]
-        controller.id = flat?.id ?? 0
-
-        self.navigationController?.pushViewController(controller, animated: true)
+            self.navigationController?.pushViewController(controller, animated: true)
+        default:
+            break
+        }
+        
+        
     }
 }

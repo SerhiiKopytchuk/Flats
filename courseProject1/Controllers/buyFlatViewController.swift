@@ -141,7 +141,8 @@ class buyFlatViewController: UIViewController {
         priceLabel.text = String(flat?.price ?? 0)
         priceLabel.text! += " $"
         
-        ownerButton.titleLabel?.text = owner?.name
+//        ownerButton.titleLabel?.text = owner?.name
+        ownerButton.setTitle(owner?.name, for: .normal)
     }
     
     func checkForZeros(){
