@@ -21,6 +21,8 @@ class User: Object{
     @objc dynamic var appPassword:String? = ""
     
     let flats = List<Flat>()
+    let studios = List<Studio>()
+
     
     var friendsId = List<Int>()
     

@@ -21,6 +21,9 @@
 		40ADD08027D8A95A0021BC7C /* userViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40ADD07F27D8A95A0021BC7C /* userViewController.swift */; };
 		40BEB30427CB96E7009747DA /* EditOrDeleteFlatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BEB30327CB96E7009747DA /* EditOrDeleteFlatViewController.swift */; };
 		40BEB30627CBAB75009747DA /* searchFlatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BEB30527CBAB75009747DA /* searchFlatsViewController.swift */; };
+		40C114E72811739C008C2F33 /* EditOrDelStudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C114E62811739C008C2F33 /* EditOrDelStudioViewController.swift */; };
+		40C114E92811807F008C2F33 /* buyStudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C114E82811807F008C2F33 /* buyStudioViewController.swift */; };
+		40C114EB2811AEB8008C2F33 /* StudioClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C114EA2811AEB8008C2F33 /* StudioClass.swift */; };
 		40C3844E27CCCFF8000865AF /* buyFlatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C3844D27CCCFF8000865AF /* buyFlatViewController.swift */; };
 		40C7D4D927C64E8200573E97 /* CreateFlatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C7D4D827C64E8200573E97 /* CreateFlatViewController.swift */; };
 		40D2DA4427C0370200302D30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D2DA4327C0370200302D30 /* AppDelegate.swift */; };
@@ -33,6 +36,8 @@
 		40E2942727DB4AC800A1B02F /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2942627DB4AC800A1B02F /* UIViewControllerExtension.swift */; };
 		40EB67942811453C003C0C33 /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EB67932811453C003C0C33 /* AdminViewController.swift */; };
 		40EB67962811458B003C0C33 /* AdminClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EB67952811458B003C0C33 /* AdminClass.swift */; };
+		40EB679828114CD1003C0C33 /* CreateStudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EB679728114CD1003C0C33 /* CreateStudioViewController.swift */; };
+		40EB679A2811543B003C0C33 /* ChooseFlatOrStudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EB67992811543B003C0C33 /* ChooseFlatOrStudioViewController.swift */; };
 		40F69DE3280EBBCE0013A4FA /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F69DE2280EBBCE0013A4FA /* FriendsTableViewCell.swift */; };
 		40F69DE5280EBBE40013A4FA /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F69DE4280EBBE40013A4FA /* FriendsViewController.swift */; };
 		40F69DE7280EDA5D0013A4FA /* MyFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F69DE6280EDA5D0013A4FA /* MyFriendsViewController.swift */; };
@@ -55,6 +60,9 @@
 		40ADD07F27D8A95A0021BC7C /* userViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userViewController.swift; sourceTree = "<group>"; };
 		40BEB30327CB96E7009747DA /* EditOrDeleteFlatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditOrDeleteFlatViewController.swift; sourceTree = "<group>"; };
 		40BEB30527CBAB75009747DA /* searchFlatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchFlatsViewController.swift; sourceTree = "<group>"; };
+		40C114E62811739C008C2F33 /* EditOrDelStudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditOrDelStudioViewController.swift; sourceTree = "<group>"; };
+		40C114E82811807F008C2F33 /* buyStudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buyStudioViewController.swift; sourceTree = "<group>"; };
+		40C114EA2811AEB8008C2F33 /* StudioClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudioClass.swift; sourceTree = "<group>"; };
 		40C3844D27CCCFF8000865AF /* buyFlatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buyFlatViewController.swift; sourceTree = "<group>"; };
 		40C7D4D827C64E8200573E97 /* CreateFlatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFlatViewController.swift; sourceTree = "<group>"; };
 		40D2DA4027C0370200302D30 /* courseProject1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = courseProject1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +77,8 @@
 		40E2942627DB4AC800A1B02F /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		40EB67932811453C003C0C33 /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
 		40EB67952811458B003C0C33 /* AdminClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminClass.swift; sourceTree = "<group>"; };
+		40EB679728114CD1003C0C33 /* CreateStudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStudioViewController.swift; sourceTree = "<group>"; };
+		40EB67992811543B003C0C33 /* ChooseFlatOrStudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseFlatOrStudioViewController.swift; sourceTree = "<group>"; };
 		40F69DE2280EBBCE0013A4FA /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
 		40F69DE4280EBBE40013A4FA /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		40F69DE6280EDA5D0013A4FA /* MyFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFriendsViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +136,10 @@
 				40F69DE4280EBBE40013A4FA /* FriendsViewController.swift */,
 				40F69DE6280EDA5D0013A4FA /* MyFriendsViewController.swift */,
 				40EB67932811453C003C0C33 /* AdminViewController.swift */,
+				40EB679728114CD1003C0C33 /* CreateStudioViewController.swift */,
+				40EB67992811543B003C0C33 /* ChooseFlatOrStudioViewController.swift */,
+				40C114E62811739C008C2F33 /* EditOrDelStudioViewController.swift */,
+				40C114E82811807F008C2F33 /* buyStudioViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -136,6 +150,7 @@
 				4067941C27C0380700620F9D /* UserClass.swift */,
 				40EB67952811458B003C0C33 /* AdminClass.swift */,
 				4067941D27C0380700620F9D /* FlatClass.swift */,
+				40C114EA2811AEB8008C2F33 /* StudioClass.swift */,
 			);
 			path = "Сlasses";
 			sourceTree = "<group>";
@@ -313,7 +328,9 @@
 				4067942127C0380700620F9D /* LoginViewController.swift in Sources */,
 				4067942027C0380700620F9D /* RegistraitionViewController.swift in Sources */,
 				40D2DA4427C0370200302D30 /* AppDelegate.swift in Sources */,
+				40EB679A2811543B003C0C33 /* ChooseFlatOrStudioViewController.swift in Sources */,
 				40F69DE3280EBBCE0013A4FA /* FriendsTableViewCell.swift in Sources */,
+				40C114EB2811AEB8008C2F33 /* StudioClass.swift in Sources */,
 				4067941F27C0380700620F9D /* mainViewController.swift in Sources */,
 				40501BB427DCEDD800F575A1 /* Manager.swift in Sources */,
 				4000738627D7B5F900F9D45B /* textFieldDelegate.swift in Sources */,
@@ -326,6 +343,7 @@
 				4067942727C03ACB00620F9D /* extensions.swift in Sources */,
 				404D907327C2826A008D283F /* AccountViewController.swift in Sources */,
 				40AAE6A327D5F838003D4345 /* passwordViewController.swift in Sources */,
+				40EB679828114CD1003C0C33 /* CreateStudioViewController.swift in Sources */,
 				4067941E27C0380700620F9D /* ViewController.swift in Sources */,
 				40E2942727DB4AC800A1B02F /* UIViewControllerExtension.swift in Sources */,
 				40F69DE5280EBBE40013A4FA /* FriendsViewController.swift in Sources */,
@@ -334,7 +352,9 @@
 				40D5B9BF27CAD4BD000794A4 /* MyFlatsTableViewCell.swift in Sources */,
 				40BEB30627CBAB75009747DA /* searchFlatsViewController.swift in Sources */,
 				40C3844E27CCCFF8000865AF /* buyFlatViewController.swift in Sources */,
+				40C114E92811807F008C2F33 /* buyStudioViewController.swift in Sources */,
 				40D5B9BB27CAB7C2000794A4 /* MyFlatsViewController.swift in Sources */,
+				40C114E72811739C008C2F33 /* EditOrDelStudioViewController.swift in Sources */,
 				40D2DA4627C0370200302D30 /* SceneDelegate.swift in Sources */,
 				4067942527C0380700620F9D /* FlatClass.swift in Sources */,
 			);
