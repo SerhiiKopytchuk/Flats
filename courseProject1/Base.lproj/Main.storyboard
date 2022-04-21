@@ -1802,6 +1802,79 @@
             </objects>
             <point key="canvasLocation" x="-571" y="400"/>
         </scene>
+        <!--Admin View Controller-->
+        <scene sceneID="yaA-NN-3m8">
+            <objects>
+                <viewController storyboardIdentifier="AdminViewController" id="yjD-O9-ph6" customClass="AdminViewController" customModule="courseProject1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cIF-um-GhR">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="762-UT-BmS">
+                                <rect key="frame" x="20" y="64" width="65" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="logout"/>
+                                <connections>
+                                    <action selector="logoutButtonPressed:" destination="yjD-O9-ph6" eventType="touchUpInside" id="cj6-Qd-vOY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j2Q-zB-17N">
+                                <rect key="frame" x="20" y="759" width="350" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Count of users"/>
+                                <connections>
+                                    <action selector="countOfAllUsersButtonPressed:" destination="yjD-O9-ph6" eventType="touchUpInside" id="60g-6E-aTG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q3l-C3-ioo">
+                                <rect key="frame" x="20" y="708" width="350" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Count of flats"/>
+                                <connections>
+                                    <action selector="countOfAllFlatsButtonPressed:" destination="yjD-O9-ph6" eventType="touchUpInside" id="1b0-s8-mGb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kes-UO-1Xs">
+                                <rect key="frame" x="20" y="657" width="350" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Sum price of all flats"/>
+                                <connections>
+                                    <action selector="sumPriceOfAllFlatsButtonPressed:" destination="yjD-O9-ph6" eventType="touchUpInside" id="JIa-NO-Tgp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHL-zg-KDN">
+                                <rect key="frame" x="20" y="606" width="350" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Average price of flat"/>
+                                <connections>
+                                    <action selector="averagePriceOfFlatButtonPressed:" destination="yjD-O9-ph6" eventType="touchUpInside" id="bKq-xM-bmy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="QiH-gQ-W5T"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FHL-zg-KDN" firstAttribute="leading" secondItem="Kes-UO-1Xs" secondAttribute="leading" id="0IB-En-E1s"/>
+                            <constraint firstItem="Q3l-C3-ioo" firstAttribute="trailing" secondItem="j2Q-zB-17N" secondAttribute="trailing" id="7eI-nu-Fsm"/>
+                            <constraint firstItem="Q3l-C3-ioo" firstAttribute="leading" secondItem="j2Q-zB-17N" secondAttribute="leading" id="8Im-dc-EpI"/>
+                            <constraint firstItem="j2Q-zB-17N" firstAttribute="leading" secondItem="QiH-gQ-W5T" secondAttribute="leading" constant="20" id="Ayk-Ot-0bT"/>
+                            <constraint firstItem="FHL-zg-KDN" firstAttribute="trailing" secondItem="Kes-UO-1Xs" secondAttribute="trailing" id="CFI-a7-Y3K"/>
+                            <constraint firstItem="Q3l-C3-ioo" firstAttribute="top" secondItem="Kes-UO-1Xs" secondAttribute="bottom" constant="20" id="GUa-Cg-izZ"/>
+                            <constraint firstItem="762-UT-BmS" firstAttribute="top" secondItem="QiH-gQ-W5T" secondAttribute="top" constant="20" id="GUz-YP-yUD"/>
+                            <constraint firstItem="Kes-UO-1Xs" firstAttribute="leading" secondItem="Q3l-C3-ioo" secondAttribute="leading" id="OoQ-Uy-mkp"/>
+                            <constraint firstItem="Kes-UO-1Xs" firstAttribute="top" secondItem="FHL-zg-KDN" secondAttribute="bottom" constant="20" id="VX2-nw-Flq"/>
+                            <constraint firstItem="j2Q-zB-17N" firstAttribute="top" secondItem="Q3l-C3-ioo" secondAttribute="bottom" constant="20" id="ZUH-gX-O7O"/>
+                            <constraint firstItem="762-UT-BmS" firstAttribute="leading" secondItem="QiH-gQ-W5T" secondAttribute="leading" constant="20" id="fCy-i3-x0h"/>
+                            <constraint firstItem="QiH-gQ-W5T" firstAttribute="trailing" secondItem="j2Q-zB-17N" secondAttribute="trailing" constant="20" id="fnz-1Z-Uol"/>
+                            <constraint firstItem="Kes-UO-1Xs" firstAttribute="trailing" secondItem="Q3l-C3-ioo" secondAttribute="trailing" id="hR5-Mh-0gB"/>
+                            <constraint firstItem="QiH-gQ-W5T" firstAttribute="bottom" secondItem="j2Q-zB-17N" secondAttribute="bottom" constant="20" id="pIg-3g-vHe"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fAZ-Je-eRp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="347" y="155"/>
+        </scene>
         <!--Main View Controller-->
         <scene sceneID="uI1-7x-erK">
             <objects>

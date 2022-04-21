@@ -29,8 +29,19 @@ class LoginViewController: UIViewController {
             let realm = try! Realm()
             var isFindUser = false
             let users = realm.objects(User.self)
+            let admins = realm.objects(Admin.self)
             let name = nickNameTextField.text
             let password = passwordTextField.text
+            for admin in admins{
+                if admin.name == name{
+                    if admin.password == password{
+                        //go to vc
+                        guard let controller = storyboard?.instantiateViewController(withIdentifier: "AdminViewController") as? AdminViewController else { return }
+                        navigationController?.pushViewController(controller, animated: true)
+                        return
+                    }
+                }
+            }
             //search users with this names
             for user in users{
                 if user.name == name{
@@ -47,10 +58,6 @@ class LoginViewController: UIViewController {
                         user.isAutorized = false
                         try! realm.commitWrite()
                         
-                        //delete later
-                        UserDefaults.standard.set(name, forKey: "name")
-                        UserDefaults.standard.set(user.id, forKey: "userId")
-                        //
 
                         self.navigationController?.popToRootViewController(animated: true)
 

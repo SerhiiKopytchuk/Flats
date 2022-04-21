@@ -31,6 +31,8 @@
 		40D5B9BB27CAB7C2000794A4 /* MyFlatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D5B9BA27CAB7C2000794A4 /* MyFlatsViewController.swift */; };
 		40D5B9BF27CAD4BD000794A4 /* MyFlatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D5B9BE27CAD4BD000794A4 /* MyFlatsTableViewCell.swift */; };
 		40E2942727DB4AC800A1B02F /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2942627DB4AC800A1B02F /* UIViewControllerExtension.swift */; };
+		40EB67942811453C003C0C33 /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EB67932811453C003C0C33 /* AdminViewController.swift */; };
+		40EB67962811458B003C0C33 /* AdminClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EB67952811458B003C0C33 /* AdminClass.swift */; };
 		40F69DE3280EBBCE0013A4FA /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F69DE2280EBBCE0013A4FA /* FriendsTableViewCell.swift */; };
 		40F69DE5280EBBE40013A4FA /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F69DE4280EBBE40013A4FA /* FriendsViewController.swift */; };
 		40F69DE7280EDA5D0013A4FA /* MyFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F69DE6280EDA5D0013A4FA /* MyFriendsViewController.swift */; };
@@ -65,6 +67,8 @@
 		40D5B9BA27CAB7C2000794A4 /* MyFlatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFlatsViewController.swift; sourceTree = "<group>"; };
 		40D5B9BE27CAD4BD000794A4 /* MyFlatsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFlatsTableViewCell.swift; sourceTree = "<group>"; };
 		40E2942627DB4AC800A1B02F /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		40EB67932811453C003C0C33 /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
+		40EB67952811458B003C0C33 /* AdminClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminClass.swift; sourceTree = "<group>"; };
 		40F69DE2280EBBCE0013A4FA /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
 		40F69DE4280EBBE40013A4FA /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		40F69DE6280EDA5D0013A4FA /* MyFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFriendsViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 				40ADD07F27D8A95A0021BC7C /* userViewController.swift */,
 				40F69DE4280EBBE40013A4FA /* FriendsViewController.swift */,
 				40F69DE6280EDA5D0013A4FA /* MyFriendsViewController.swift */,
+				40EB67932811453C003C0C33 /* AdminViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -129,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				4067941C27C0380700620F9D /* UserClass.swift */,
+				40EB67952811458B003C0C33 /* AdminClass.swift */,
 				4067941D27C0380700620F9D /* FlatClass.swift */,
 			);
 			path = "Сlasses";
@@ -312,6 +318,7 @@
 				40501BB427DCEDD800F575A1 /* Manager.swift in Sources */,
 				4000738627D7B5F900F9D45B /* textFieldDelegate.swift in Sources */,
 				40ADD08027D8A95A0021BC7C /* userViewController.swift in Sources */,
+				40EB67942811453C003C0C33 /* AdminViewController.swift in Sources */,
 				40F69DE7280EDA5D0013A4FA /* MyFriendsViewController.swift in Sources */,
 				4067942427C0380700620F9D /* UserClass.swift in Sources */,
 				40F69DE9280EDAFA0013A4FA /* MyFriendsTableViewCell.swift in Sources */,
@@ -322,6 +329,7 @@
 				4067941E27C0380700620F9D /* ViewController.swift in Sources */,
 				40E2942727DB4AC800A1B02F /* UIViewControllerExtension.swift in Sources */,
 				40F69DE5280EBBE40013A4FA /* FriendsViewController.swift in Sources */,
+				40EB67962811458B003C0C33 /* AdminClass.swift in Sources */,
 				40C7D4D927C64E8200573E97 /* CreateFlatViewController.swift in Sources */,
 				40D5B9BF27CAD4BD000794A4 /* MyFlatsTableViewCell.swift in Sources */,
 				40BEB30627CBAB75009747DA /* searchFlatsViewController.swift in Sources */,
