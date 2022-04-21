@@ -67,7 +67,7 @@ extension MyFriendsViewController:MyFriendsTableViewCellDelegate{
     func removeButtonPressed(userId: Int) {
         let realm = try! Realm()
         let user = realm.objects(User.self).filter("current == true").first
-        var friends = user?.friendsId
+        let friends = user?.friendsId
         if var friendsCount = friends?.count{
             friendsCount += -1
             let time = friendsCount
