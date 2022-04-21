@@ -94,7 +94,7 @@ class CreateFlatViewController: UIViewController {
         let realm = try! Realm()
         
         
-        var isFindUser = false
+
         let user = realm.objects(User.self).filter("current == true").first
         
         
