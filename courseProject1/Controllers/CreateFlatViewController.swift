@@ -93,20 +93,10 @@ class CreateFlatViewController: UIViewController {
         
         let realm = try! Realm()
         
-        var user = User()
-        var isFindUser = false
-        let users = realm.objects(User.self)
-        for userInFor in users{
-            if userInFor.current == true{
-                user = userInFor
-                isFindUser = true
-                break
-            }
-        }
         
-        if !isFindUser{
-            return
-        }
+        var isFindUser = false
+        let user = realm.objects(User.self).filter("current == true").first
+        
         
    
         let price = Int(priceTextField.text ?? "") ?? 0
@@ -146,7 +136,7 @@ class CreateFlatViewController: UIViewController {
     
         
         realm.beginWrite()
-        user.flats.append(flat)
+        user?.flats.append(flat)
         realm.add(flat)
         try! realm.commitWrite()
         

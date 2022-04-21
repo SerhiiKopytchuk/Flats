@@ -62,6 +62,10 @@ class mainViewController: UIViewController {
         navigationController?.pushViewController(controller, animated: true)
     }
     
+    @IBAction func myFriendsButtonPressed(_ sender: UIButton) {
+        guard let controller = storyboard?.instantiateViewController(withIdentifier: "MyFriendsViewController") as? MyFriendsViewController else { return}
+        navigationController?.pushViewController(controller, animated: true)
+    }
     
     @IBAction func sellButtonPressed(_ sender: UIButton) {
         let controller = self.storyboard?.instantiateViewController(withIdentifier:  "CreateFlatViewController") as! CreateFlatViewController
