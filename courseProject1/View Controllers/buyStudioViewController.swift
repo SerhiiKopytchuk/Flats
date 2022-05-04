@@ -56,21 +56,8 @@ class buyStudioViewController: UIViewController {
                 let studio = self.realm.objects(Studio.self).filter("id == \(self.id)").first
                 self.realm.beginWrite()
                 
-                
-                var index = 0
-                guard let FormerOwner:User = studio?.owner else {return}
-                
-                for i in FormerOwner.studios.indices{
-                    if FormerOwner.studios[i].id == studio?.id{
-                        index = i
-                    }
-                }
-                
-                FormerOwner.studios.remove(at: index)
-                
-                studio?.ownerId = user?.id ?? 0
-                studio!.owner = user
                 user?.studios.append(studio ?? Studio())
+                
                 try! self.realm.commitWrite()
                 self.navigationController?.popToRootViewController(animated: true)
             default:
