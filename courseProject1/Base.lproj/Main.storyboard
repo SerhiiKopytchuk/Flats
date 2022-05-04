@@ -1018,6 +1018,21 @@
             </objects>
             <point key="canvasLocation" x="301.53846153846155" y="-1431.0426540284359"/>
         </scene>
+        <!--Test View Controller-->
+        <scene sceneID="Yt4-ik-HgD">
+            <objects>
+                <viewController storyboardIdentifier="TestViewController" id="URN-as-YcC" customClass="TestViewController" customModule="courseProject1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QbJ-Um-p3M">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="tPE-eR-sjx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yjW-60-WDK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2006" y="-2117"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="kF2-el-jTh">
             <objects>
@@ -1091,7 +1106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cB9-h3-6mk" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3935.3846153846152" y="-724.4075829383886"/>
+            <point key="canvasLocation" x="-4442" y="-726"/>
         </scene>
         <!--Registraition View Controller-->
         <scene sceneID="4Va-mA-yap">

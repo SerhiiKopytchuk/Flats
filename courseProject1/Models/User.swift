@@ -1,5 +1,5 @@
 //
-//  UserClass.swift
+//  User.swift
 //  courseProjectFlats
 //
 //  Created by Serhii Kopytchuk on 18.02.2022.
@@ -21,7 +21,7 @@ class User: Object{
     @objc dynamic var appPassword:String? = ""
     
     let flats = List<Flat>()
-    let studios = List<Studio>()
+    var studios = List<Studio>()
 
     
     var friendsId = List<Int>()
