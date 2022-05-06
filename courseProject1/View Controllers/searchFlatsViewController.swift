@@ -400,7 +400,6 @@ extension searchFlatsViewController: UITableViewDelegate, UITableViewDataSource{
         let flats = realm.objects(Flat.self).filter("owner.id != \(user?.id ?? 0)").filter("price > \(startPrice)  AND price < \(endPrice)")
         let studiosList = realm.objects(Studio.self).filter("owner.id != \(user?.id ?? 0)").filter("price > \(startPrice)  AND price < \(endPrice)")
         
-        var studios = Array(studiosList)
         
 
        

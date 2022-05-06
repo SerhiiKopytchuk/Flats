@@ -23,9 +23,10 @@ class buyStudioViewController: UIViewController {
     @IBOutlet weak var ownerNumberLabel: UILabel!
     @IBOutlet weak var createdDateLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var ownerButton: UIButton!
+    
     @IBOutlet weak var studioImageView: UIImageView!
-
+    @IBOutlet weak var ownersLabel: UILabel!
+    
     @IBOutlet weak var canContainPersonLabel: UILabel!
     @IBOutlet weak var haveShowerLabel: UILabel!
     @IBOutlet weak var haveRelaxRoomLabel: UILabel!
@@ -119,9 +120,7 @@ class buyStudioViewController: UIViewController {
         priceLabel.text = String(studio?.price ?? 0)
         priceLabel.text! += " $"
         
-//        ownerButton.titleLabel?.text = owner?.name
-        ownerButton.setTitle(owner?.name, for: .normal)
-
+        ownersLabel.text = getOwners()
     }
     
     func checkForZeros(){
@@ -148,16 +147,19 @@ class buyStudioViewController: UIViewController {
         }
     }
     
-    @IBAction func ownerButtonPressed(_ sender: UIButton) {
-        if fromUser {
-            self.navigationController?.popViewController(animated: true)
-            return
-        }
+    func getOwners()-> String{
         let studio = realm.objects(Studio.self).filter("id == \(id)").first
-        let owner = realm.objects(User.self).filter("id == \(studio?.ownerId ?? 0)").first
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: "userViewController") as! userViewController
-        controller.userId = owner?.id ?? 0
-        self.navigationController?.pushViewController(controller, animated: true)
+        guard let owners = studio?.owners else { return "" }
+        var result = ""
+        
+        for owner in owners{
+            result += owner.name ?? ""
+            result += ", "
+        }
+        
+        result.removeLast(2)
+        
+        return result
     }
     
 
