@@ -39,7 +39,7 @@ class mainViewController: UIViewController {
         super.viewDidAppear(animated)
         let realm = try! Realm()
         
-        guard let user = realm.objects(User.self).filter("current == true").first else{
+        guard let _ = realm.objects(User.self).filter("current == true").first else{
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "ViewController" ) as! ViewController
             self.navigationController?.pushViewController(controller, animated: true)
             return
