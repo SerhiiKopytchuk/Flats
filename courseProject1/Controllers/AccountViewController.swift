@@ -14,7 +14,7 @@ class AccountViewController: UIViewController {
     @IBOutlet weak var NewPasswordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var phoneNumberTextField: UITextField!
-    @IBOutlet weak var inAppPasswordLabel: UILabel!
+
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var profileImageView: UIImageView!
@@ -40,7 +40,7 @@ class AccountViewController: UIViewController {
         
         nameTextField.text = user?.name
         
-        inAppPasswordLabel.text = user?.appPassword
+
         
         if user?.phoneNumber != 0.0{
             var number:String = String(user!.phoneNumber)
@@ -58,12 +58,7 @@ class AccountViewController: UIViewController {
         showPicker()
     }
     
-    
-    @IBAction func changeInAppPasswordButtonPressed(_ sender: UIButton) {
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: "passwordViewController") as! passwordViewController
-        controller.text = "old password"
-        self.navigationController?.pushViewController(controller, animated: true)
-    }
+
     
     @IBAction func deleteAccountButtonPressed(_ sender: UIButton) {
         presentAlertWithTitle(title: "Delete account", message: "Do you realy want to delete account?", options: "no", "yes") { (option) in

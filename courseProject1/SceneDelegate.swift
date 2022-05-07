@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import RealmSwift
+import LocalAuthentication
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    let realm = try! Realm()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -39,6 +41,37 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneWillEnterForeground(_ scene: UIScene) {
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.
+        if let _ = self.realm.objects(User.self).filter("current == true").first{
+            let context = LAContext()
+            var error:NSError? = nil
+            if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error){
+                let reason = "Authorize with face id!"
+                context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { [weak self] succes, error in
+                    DispatchQueue.main.async {
+                        guard succes, error == nil else{
+                            //failed
+                            
+                            
+                            let rootViewController = self?.window!.rootViewController as! UINavigationController
+                                let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                                let profileViewController = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+                            rootViewController.pushViewController(profileViewController, animated: true)
+    
+                            
+                            
+                            return
+                        }
+                        let user = self?.realm.objects(User.self).filter("current == true").first
+                        self?.realm.beginWrite()
+                        user?.isAutorized = true
+                        try! self?.realm.commitWrite()
+                        
+                    }
+                }
+            }else{
+                
+            }
+        }
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
