@@ -1,5 +1,5 @@
 //
-//  UserClass.swift
+//  User.swift
 //  courseProjectFlats
 //
 //  Created by Serhii Kopytchuk on 18.02.2022.

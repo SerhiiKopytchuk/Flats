@@ -1,5 +1,5 @@
 //
-//  AdminClass.swift
+//  Admin.swift
 //  courseProject1
 //
 //  Created by Serhii Kopytchuk on 21.04.2022.
