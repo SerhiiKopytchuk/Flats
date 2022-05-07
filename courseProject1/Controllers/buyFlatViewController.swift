@@ -75,7 +75,8 @@ class buyFlatViewController: UIViewController {
                 flat!.owner = user
                 user.flats.append(flat ?? Flat())
                 try! self.realm.commitWrite()
-                self.navigationController?.popToRootViewController(animated: true)
+                guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "CongratulationsViewController") as? CongratulationsViewController else{ return }
+                self.navigationController?.pushViewController(controller, animated: true)
             default:
                 return
             }
