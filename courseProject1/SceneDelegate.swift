@@ -51,13 +51,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                         guard succes, error == nil else{
                             //failed
                             
+                            let realm = try! Realm()
+                            let users = realm.objects(User.self)
+                            realm.beginWrite()
+                            for user in users{
+                                user.current = false
+                            }
+                            try! realm.commitWrite()
                             
                             let rootViewController = self?.window!.rootViewController as! UINavigationController
                                 let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
                                 let profileViewController = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
                             rootViewController.pushViewController(profileViewController, animated: true)
-    
-                            
                             
                             return
                         }

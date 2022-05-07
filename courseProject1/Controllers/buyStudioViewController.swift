@@ -72,7 +72,8 @@ class buyStudioViewController: UIViewController {
                 studio!.owner = user
                 user?.studios.append(studio ?? Studio())
                 try! self.realm.commitWrite()
-                self.navigationController?.popToRootViewController(animated: true)
+                guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "CongratulationsViewController") as? CongratulationsViewController else{ return }
+                self.navigationController?.pushViewController(controller, animated: true)
             default:
                 return
             }

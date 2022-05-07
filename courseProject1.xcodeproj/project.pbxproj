@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4000738627D7B5F900F9D45B /* textFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4000738527D7B5F900F9D45B /* textFieldDelegate.swift */; };
+		4026CFB02826A94200777B31 /* CongratulationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026CFAF2826A94200777B31 /* CongratulationsViewController.swift */; };
 		404D907327C2826A008D283F /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404D907227C2826A008D283F /* AccountViewController.swift */; };
 		40501BB427DCEDD800F575A1 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40501BB327DCEDD800F575A1 /* Manager.swift */; };
 		4067941E27C0380700620F9D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4067941527C0380700620F9D /* ViewController.swift */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		4000738527D7B5F900F9D45B /* textFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textFieldDelegate.swift; sourceTree = "<group>"; };
+		4026CFAF2826A94200777B31 /* CongratulationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationsViewController.swift; sourceTree = "<group>"; };
 		404D907227C2826A008D283F /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		40501BB327DCEDD800F575A1 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		4067941527C0380700620F9D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				40EB67992811543B003C0C33 /* ChooseFlatOrStudioViewController.swift */,
 				40C114E62811739C008C2F33 /* EditOrDelStudioViewController.swift */,
 				40C114E82811807F008C2F33 /* buyStudioViewController.swift */,
+				4026CFAF2826A94200777B31 /* CongratulationsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				40501BB427DCEDD800F575A1 /* Manager.swift in Sources */,
 				4000738627D7B5F900F9D45B /* textFieldDelegate.swift in Sources */,
 				40ADD08027D8A95A0021BC7C /* userViewController.swift in Sources */,
+				4026CFB02826A94200777B31 /* CongratulationsViewController.swift in Sources */,
 				40EB67942811453C003C0C33 /* AdminViewController.swift in Sources */,
 				40F69DE7280EDA5D0013A4FA /* MyFriendsViewController.swift in Sources */,
 				4067942427C0380700620F9D /* UserClass.swift in Sources */,
