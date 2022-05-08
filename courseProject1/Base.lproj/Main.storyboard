@@ -127,14 +127,14 @@
             <objects>
                 <viewController storyboardIdentifier="AccountViewController" id="6uf-LZ-Qpd" customClass="AccountViewController" customModule="courseProject1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4JO-tM-vHb">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="1600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Pq-I2-lAc">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="1600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="900"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5hD-3q-B70">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="1506"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="900"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sincerely-media-0KwFuwdW7pU-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="h0o-wt-Dtx">
                                                 <rect key="frame" x="0.0" y="-254" width="390" height="2212"/>
@@ -307,7 +307,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFw-NB-zi0">
-                                                <rect key="frame" x="20" y="1455" width="350" height="31"/>
+                                                <rect key="frame" x="20" y="849" width="350" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Delete account">
                                                     <color key="baseForegroundColor" systemColor="systemRedColor"/>
@@ -373,7 +373,7 @@
                                             <constraint firstItem="1iu-C4-pFW" firstAttribute="top" secondItem="pQj-37-NH8" secondAttribute="bottom" constant="10" id="Kbt-KR-gg1"/>
                                             <constraint firstItem="kpm-ow-vYa" firstAttribute="top" secondItem="ttQ-SW-YxP" secondAttribute="bottom" constant="20" id="LJ8-yP-pSQ"/>
                                             <constraint firstAttribute="trailing" secondItem="KTX-VH-Tjg" secondAttribute="trailing" constant="20" id="NHA-zb-iUK"/>
-                                            <constraint firstAttribute="height" constant="1506" id="Nb4-RQ-JHo"/>
+                                            <constraint firstAttribute="height" constant="900" id="Nb4-RQ-JHo"/>
                                             <constraint firstItem="qw0-iM-hsW" firstAttribute="leading" secondItem="5hD-3q-B70" secondAttribute="leading" constant="20" id="P7B-KH-kzS"/>
                                             <constraint firstItem="zN8-Zh-ESG" firstAttribute="leading" secondItem="5hD-3q-B70" secondAttribute="leading" constant="20" id="QKw-ze-I6I"/>
                                             <constraint firstAttribute="trailing" secondItem="Him-6L-jvV" secondAttribute="trailing" constant="20" id="RZU-Sc-enh"/>
@@ -429,7 +429,7 @@
                             <constraint firstItem="3Pq-I2-lAc" firstAttribute="leading" secondItem="sAf-5I-odz" secondAttribute="leading" id="cSc-hO-7oq"/>
                         </constraints>
                     </view>
-                    <size key="freeformSize" width="390" height="1600"/>
+                    <size key="freeformSize" width="390" height="900"/>
                     <connections>
                         <outlet property="NewPasswordTextField" destination="pQj-37-NH8" id="S7E-74-0AF"/>
                         <outlet property="bottomConstraint" destination="Fma-2L-Joq" id="nDB-CZ-kgS"/>
@@ -443,7 +443,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HIA-fD-a6z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-749.23076923076917" y="-1715.4028436018957"/>
+            <point key="canvasLocation" x="-618.46153846153845" y="-1412.5592417061612"/>
         </scene>
         <!--User View Controller-->
         <scene sceneID="9bg-LI-ea7">
@@ -988,7 +988,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="1702"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mitchell-luo-wFaEKXlJwqA-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="0IV-bK-Oue">
-                                        <rect key="frame" x="-453.33333333333331" y="-300" width="1320.6666666666667" height="2439"/>
+                                        <rect key="frame" x="-783.33333333333337" y="-300" width="1980.666666666667" height="2439"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u1T-Om-ydv">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
@@ -1664,7 +1664,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="1800"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mitchell-luo-wFaEKXlJwqA-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="A5v-2q-5ex">
-                                        <rect key="frame" x="-453.33333333333331" y="-300" width="1320.6666666666667" height="2400"/>
+                                        <rect key="frame" x="-783.33333333333337" y="-300" width="1980.666666666667" height="2400"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HW1-Pl-O37">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
@@ -2691,14 +2691,14 @@
             <objects>
                 <viewController storyboardIdentifier="buyFlatViewController" id="QoI-cr-kr3" customClass="buyFlatViewController" customModule="courseProject1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TJQ-9o-tKN">
-                        <rect key="frame" x="0.0" y="0.0" width="415" height="1800"/>
+                        <rect key="frame" x="0.0" y="0.0" width="415" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lEi-bH-jcU">
-                                <rect key="frame" x="0.0" y="0.0" width="415" height="1800"/>
+                                <rect key="frame" x="0.0" y="0.0" width="415" height="1200"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mitchell-luo-wFaEKXlJwqA-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="1Mv-3R-vyg">
-                                        <rect key="frame" x="-452.66666666666669" y="-300" width="1320.3333333333333" height="2351"/>
+                                        <rect key="frame" x="-782.66666666666663" y="-300" width="1980.333333333333" height="2431.6666666666665"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0S7-gA-3wI">
                                         <rect key="frame" x="0.0" y="0.0" width="415" height="70"/>
@@ -3074,10 +3074,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t7I-jC-Nrq">
-                                        <rect key="frame" x="0.0" y="1484" width="415" height="119.33333333333326"/>
+                                        <rect key="frame" x="0.0" y="1484" width="415" height="200"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEe-xg-NeW">
-                                                <rect key="frame" x="20" y="69" width="375" height="30.333333333333329"/>
+                                                <rect key="frame" x="20" y="69" width="375" height="111"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -3088,6 +3088,7 @@
                                             <constraint firstAttribute="bottom" secondItem="uEe-xg-NeW" secondAttribute="bottom" constant="20" id="Mef-Ju-trI"/>
                                             <constraint firstItem="uEe-xg-NeW" firstAttribute="top" secondItem="t7I-jC-Nrq" secondAttribute="top" constant="69" id="dIA-7P-ujP"/>
                                             <constraint firstItem="uEe-xg-NeW" firstAttribute="leading" secondItem="t7I-jC-Nrq" secondAttribute="leading" constant="20" id="ojd-He-9Pw"/>
+                                            <constraint firstAttribute="height" constant="200" id="rxb-Lx-crA"/>
                                             <constraint firstItem="uEe-xg-NeW" firstAttribute="centerX" secondItem="t7I-jC-Nrq" secondAttribute="centerX" id="y4P-Tm-fc1"/>
                                         </constraints>
                                     </view>
@@ -3104,7 +3105,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sSH-Hu-1eM">
-                                        <rect key="frame" x="20" y="1649" width="375" height="60"/>
+                                        <rect key="frame" x="20" y="1729.6666666666667" width="375" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="7gk-On-B6j"/>
                                         </constraints>
@@ -3182,7 +3183,7 @@
                             <constraint firstItem="lEi-bH-jcU" firstAttribute="width" secondItem="TJQ-9o-tKN" secondAttribute="width" id="vDV-st-M0a"/>
                         </constraints>
                     </view>
-                    <size key="freeformSize" width="415" height="1800"/>
+                    <size key="freeformSize" width="415" height="1200"/>
                     <connections>
                         <outlet property="RoomsLabel" destination="IbW-DP-1D7" id="H61-il-8ul"/>
                         <outlet property="aboutLabel" destination="Vca-yV-3yB" id="1fb-iO-nQP"/>
@@ -3479,7 +3480,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="1702"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mitchell-luo-wFaEKXlJwqA-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="By5-6O-Ul1">
-                                        <rect key="frame" x="-453.33333333333331" y="-300" width="1320.6666666666667" height="2439"/>
+                                        <rect key="frame" x="-783.33333333333337" y="-300" width="1980.666666666667" height="2439"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bod-KK-dpI">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
@@ -3998,7 +3999,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="1800"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mitchell-luo-wFaEKXlJwqA-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="Wnw-NW-JzF">
-                                        <rect key="frame" x="-453.33333333333331" y="-300" width="1320.6666666666667" height="2400"/>
+                                        <rect key="frame" x="-783.33333333333337" y="-300" width="1980.666666666667" height="2400"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HSX-c2-eeX">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
@@ -4452,14 +4453,14 @@
             <objects>
                 <viewController storyboardIdentifier="buyStudioViewController" id="LJ6-zm-crb" customClass="buyStudioViewController" customModule="courseProject1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U5M-c8-1CY">
-                        <rect key="frame" x="0.0" y="0.0" width="415" height="1800"/>
+                        <rect key="frame" x="0.0" y="0.0" width="415" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Wf-qW-Bgb">
-                                <rect key="frame" x="0.0" y="0.0" width="415" height="1800"/>
+                                <rect key="frame" x="0.0" y="0.0" width="415" height="1200"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mitchell-luo-wFaEKXlJwqA-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="pa2-Rr-kbP">
-                                        <rect key="frame" x="-452.66666666666669" y="-300" width="1320.3333333333333" height="2351"/>
+                                        <rect key="frame" x="-782.66666666666663" y="-300" width="1980.333333333333" height="2431.6666666666665"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4MP-0A-KNx">
                                         <rect key="frame" x="0.0" y="0.0" width="415" height="70"/>
@@ -4885,10 +4886,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MnW-GQ-xKn">
-                                        <rect key="frame" x="0.0" y="1484" width="415" height="119.33333333333326"/>
+                                        <rect key="frame" x="0.0" y="1484" width="415" height="200"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BeA-nA-1Bh">
-                                                <rect key="frame" x="20" y="69" width="375" height="30.333333333333329"/>
+                                                <rect key="frame" x="20" y="69" width="375" height="111"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -4898,6 +4899,7 @@
                                             <constraint firstItem="BeA-nA-1Bh" firstAttribute="leading" secondItem="MnW-GQ-xKn" secondAttribute="leading" constant="20" id="2iO-2p-eto"/>
                                             <constraint firstAttribute="trailing" secondItem="BeA-nA-1Bh" secondAttribute="trailing" constant="20" id="8Mp-Sn-vSq"/>
                                             <constraint firstItem="BeA-nA-1Bh" firstAttribute="top" secondItem="MnW-GQ-xKn" secondAttribute="top" constant="69" id="EOV-9o-Q27"/>
+                                            <constraint firstAttribute="height" constant="200" id="Pn9-ty-r93"/>
                                             <constraint firstAttribute="bottom" secondItem="BeA-nA-1Bh" secondAttribute="bottom" constant="20" id="SP8-ro-0SN"/>
                                             <constraint firstItem="BeA-nA-1Bh" firstAttribute="centerX" secondItem="MnW-GQ-xKn" secondAttribute="centerX" id="ZG6-d5-BLB"/>
                                         </constraints>
@@ -4915,7 +4917,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VSf-7F-Pey">
-                                        <rect key="frame" x="20" y="1649" width="375" height="60"/>
+                                        <rect key="frame" x="20" y="1729.6666666666667" width="375" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="nxC-Ck-Zpy"/>
                                         </constraints>
@@ -4993,7 +4995,7 @@
                             <constraint firstItem="8Wf-qW-Bgb" firstAttribute="trailing" secondItem="z3Q-S6-RVA" secondAttribute="trailing" id="uGg-uo-dJ9"/>
                         </constraints>
                     </view>
-                    <size key="freeformSize" width="415" height="1800"/>
+                    <size key="freeformSize" width="415" height="1200"/>
                     <connections>
                         <outlet property="RoomsLabel" destination="f4c-Ja-don" id="Ej4-Q2-3Ui"/>
                         <outlet property="aboutLabel" destination="8xR-7m-Niq" id="zZI-Wa-1EM"/>
@@ -5020,22 +5022,22 @@
         </scene>
     </scenes>
     <resources>
-        <image name="alena-torgonskaya-IsoP2YmoYkk-unsplash" width="1478.6666259765625" height="2218"/>
-        <image name="andres-molina-vR5ZG8ark2w-unsplash" width="1333.3333740234375" height="2000"/>
-        <image name="arrowDownGrey" width="105.33333587646484" height="80"/>
-        <image name="arrowUpGrey" width="105.33333587646484" height="79.333335876464844"/>
-        <image name="bady-abbas-hxi_yRxODNc-unsplash" width="1151" height="1726.6666259765625"/>
-        <image name="evie-s-uuCjYxJVf4o-unsplash" width="1338.6666259765625" height="2005.3333740234375"/>
-        <image name="mathias-p-r-reding-wrJZ87iY8Dk-unsplash" width="1386.6666259765625" height="2080"/>
-        <image name="milad-fakurian-GJKx5lhwU3M-unsplash" width="2666.666748046875" height="2000"/>
+        <image name="alena-torgonskaya-IsoP2YmoYkk-unsplash" width="2218" height="3327"/>
+        <image name="andres-molina-vR5ZG8ark2w-unsplash" width="2000" height="3000"/>
+        <image name="arrowDownGrey" width="158" height="120"/>
+        <image name="arrowUpGrey" width="158" height="119"/>
+        <image name="bady-abbas-hxi_yRxODNc-unsplash" width="1726.5" height="2590"/>
+        <image name="evie-s-uuCjYxJVf4o-unsplash" width="2008" height="3008"/>
+        <image name="mathias-p-r-reding-wrJZ87iY8Dk-unsplash" width="2080" height="3120"/>
+        <image name="milad-fakurian-GJKx5lhwU3M-unsplash" width="4000" height="3000"/>
         <image name="minus" catalog="system" width="128" height="24"/>
-        <image name="mitchell-luo-wFaEKXlJwqA-unsplash" width="1320.3333740234375" height="1976.6666259765625"/>
-        <image name="mohsen-ameri-4Koq7eEoJZE-unsplash" width="1280" height="1920"/>
+        <image name="mitchell-luo-wFaEKXlJwqA-unsplash" width="1980.5" height="2965"/>
+        <image name="mohsen-ameri-4Koq7eEoJZE-unsplash" width="1920" height="2880"/>
         <image name="person.fill.viewfinder" catalog="system" width="128" height="115"/>
         <image name="photo" catalog="system" width="128" height="93"/>
         <image name="photo.fill" catalog="system" width="128" height="93"/>
         <image name="plus" catalog="system" width="128" height="113"/>
-        <image name="sincerely-media-0KwFuwdW7pU-unsplash" width="1152" height="1536"/>
+        <image name="sincerely-media-0KwFuwdW7pU-unsplash" width="1728" height="2304"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
