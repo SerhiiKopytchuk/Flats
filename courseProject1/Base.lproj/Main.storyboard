@@ -2060,7 +2060,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" role="destructive" translatesAutoresizingMaskIntoConstraints="NO" id="kbo-Su-jc0">
-                                        <rect key="frame" x="276" y="1710" width="118" height="60"/>
+                                        <rect key="frame" x="217" y="1710" width="177" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="GMZ-Xe-OVg"/>
                                         </constraints>
@@ -2074,7 +2074,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dj3-CA-Joq">
-                                        <rect key="frame" x="20" y="1710" width="118" height="60"/>
+                                        <rect key="frame" x="20" y="1710" width="177" height="60"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="gray" title="apply changes">
                                             <color key="baseBackgroundColor" red="0.098039209840000002" green="0.098039209840000002" blue="0.098039209840000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -2115,7 +2115,7 @@
                                     <constraint firstItem="jtk-p8-QuH" firstAttribute="top" secondItem="HW1-Pl-O37" secondAttribute="bottom" id="hzx-l1-wUd"/>
                                     <constraint firstItem="Dj3-CA-Joq" firstAttribute="top" secondItem="Nba-mQ-PK7" secondAttribute="bottom" constant="20" id="nUC-L2-MgF"/>
                                     <constraint firstItem="HW1-Pl-O37" firstAttribute="leading" secondItem="Y7R-fF-zKX" secondAttribute="leading" id="ncX-p5-IAq"/>
-                                    <constraint firstItem="kbo-Su-jc0" firstAttribute="leading" secondItem="Dj3-CA-Joq" secondAttribute="trailing" constant="138" id="oMX-Uo-Qux"/>
+                                    <constraint firstItem="kbo-Su-jc0" firstAttribute="leading" secondItem="Dj3-CA-Joq" secondAttribute="trailing" constant="20" id="oMX-Uo-Qux"/>
                                     <constraint firstItem="aYS-11-aFq" firstAttribute="centerX" secondItem="Y7R-fF-zKX" secondAttribute="centerX" id="pGJ-bE-M6t"/>
                                     <constraint firstAttribute="bottom" secondItem="A5v-2q-5ex" secondAttribute="bottom" constant="-300" id="xXp-Mq-AKB"/>
                                     <constraint firstAttribute="trailing" secondItem="Feh-6S-Va8" secondAttribute="trailing" id="ynB-pF-Ip6"/>
@@ -4353,7 +4353,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" role="destructive" translatesAutoresizingMaskIntoConstraints="NO" id="Feh-sc-7KI">
-                                        <rect key="frame" x="276" y="1710" width="118" height="60"/>
+                                        <rect key="frame" x="217" y="1710" width="177" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="o0t-Wl-XEG"/>
                                         </constraints>
@@ -4367,7 +4367,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxq-Xp-WsD">
-                                        <rect key="frame" x="20" y="1710" width="118" height="60"/>
+                                        <rect key="frame" x="20" y="1710" width="177" height="60"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="gray" title="apply changes">
                                             <color key="baseBackgroundColor" red="0.098039209840000002" green="0.098039209840000002" blue="0.098039209840000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -4389,7 +4389,7 @@
                                     <constraint firstAttribute="trailing" secondItem="SCG-4x-nIC" secondAttribute="trailing" id="C9L-0b-yOO"/>
                                     <constraint firstItem="yxq-Xp-WsD" firstAttribute="top" secondItem="SCG-4x-nIC" secondAttribute="bottom" constant="20" id="Dsd-Dv-tay"/>
                                     <constraint firstItem="HSX-c2-eeX" firstAttribute="leading" secondItem="XMa-N1-0Mh" secondAttribute="leading" id="E8W-VR-zsw"/>
-                                    <constraint firstItem="Feh-sc-7KI" firstAttribute="leading" secondItem="yxq-Xp-WsD" secondAttribute="trailing" constant="138" id="JKC-e3-2Mc"/>
+                                    <constraint firstItem="Feh-sc-7KI" firstAttribute="leading" secondItem="yxq-Xp-WsD" secondAttribute="trailing" constant="20" id="JKC-e3-2Mc"/>
                                     <constraint firstAttribute="trailing" secondItem="5N8-0e-C9N" secondAttribute="trailing" id="NtI-2U-XkD"/>
                                     <constraint firstItem="ZKi-fq-iFe" firstAttribute="top" secondItem="6IK-m4-VJ5" secondAttribute="bottom" id="QeS-6S-MFJ"/>
                                     <constraint firstItem="vZO-gl-mnh" firstAttribute="top" secondItem="ZKi-fq-iFe" secondAttribute="bottom" id="T9g-T2-ZNW"/>
