@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4000738627D7B5F900F9D45B /* textFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4000738527D7B5F900F9D45B /* textFieldDelegate.swift */; };
+		4016D72B282847A1006EAC36 /* UserStudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4016D72A282847A1006EAC36 /* UserStudio.swift */; };
 		4026CFB02826A94200777B31 /* CongratulationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026CFAF2826A94200777B31 /* CongratulationsViewController.swift */; };
 		4026CFB42826B1B600777B31 /* Studio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026CFB32826B1B600777B31 /* Studio.swift */; };
 		404D907327C2826A008D283F /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404D907227C2826A008D283F /* AccountViewController.swift */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		4000738527D7B5F900F9D45B /* textFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textFieldDelegate.swift; sourceTree = "<group>"; };
+		4016D72A282847A1006EAC36 /* UserStudio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStudio.swift; sourceTree = "<group>"; };
 		4026CFAF2826A94200777B31 /* CongratulationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationsViewController.swift; sourceTree = "<group>"; };
 		4026CFB32826B1B600777B31 /* Studio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Studio.swift; sourceTree = "<group>"; };
 		404D907227C2826A008D283F /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				40EB67952811458B003C0C33 /* Admin.swift */,
 				4067941D27C0380700620F9D /* Flat.swift */,
 				4026CFB32826B1B600777B31 /* Studio.swift */,
+				4016D72A282847A1006EAC36 /* UserStudio.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				40C3844E27CCCFF8000865AF /* buyFlatViewController.swift in Sources */,
 				40C114E92811807F008C2F33 /* buyStudioViewController.swift in Sources */,
 				40D5B9BB27CAB7C2000794A4 /* MyFlatsViewController.swift in Sources */,
+				4016D72B282847A1006EAC36 /* UserStudio.swift in Sources */,
 				40C114E72811739C008C2F33 /* EditOrDelStudioViewController.swift in Sources */,
 				40D2DA4627C0370200302D30 /* SceneDelegate.swift in Sources */,
 				4067942527C0380700620F9D /* Flat.swift in Sources */,
