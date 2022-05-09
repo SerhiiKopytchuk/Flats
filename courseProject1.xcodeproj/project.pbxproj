@@ -179,13 +179,13 @@
 		40D2DA4227C0370200302D30 /* courseProject1 */ = {
 			isa = PBXGroup;
 			children = (
+				40D2DA4327C0370200302D30 /* AppDelegate.swift */,
+				40D2DA4527C0370200302D30 /* SceneDelegate.swift */,
 				4000738427D7B5DC00F9D45B /* extension */,
 				4067941427C0380700620F9D /* Controllers */,
 				40F69DE1280EBBAF0013A4FA /* Views */,
 				4067941B27C0380700620F9D /* Models */,
-				40D2DA4327C0370200302D30 /* AppDelegate.swift */,
 				4067942627C03ACB00620F9D /* extensions.swift */,
-				40D2DA4527C0370200302D30 /* SceneDelegate.swift */,
 				40D2DA4927C0370200302D30 /* Main.storyboard */,
 				40D2DA4C27C0370300302D30 /* Assets.xcassets */,
 				40D2DA4E27C0370300302D30 /* LaunchScreen.storyboard */,
