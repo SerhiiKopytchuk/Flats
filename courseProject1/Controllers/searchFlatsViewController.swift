@@ -400,9 +400,20 @@ extension searchFlatsViewController: UITableViewDelegate, UITableViewDataSource{
         let flats = realm.objects(Flat.self).filter("owner.id != \(user?.id ?? 0)").filter("price > \(startPrice)  AND price < \(endPrice)")
         
         let userStudios = realm.objects(UserStudio.self).filter("user.id != \(user?.id ?? 0)")
+        
         var studioArray:[Studio] = []
         for userStuio in userStudios{
             studioArray.append(userStuio.studio ?? Studio())
+        }
+        
+        let myStudios = Array(realm.objects(UserStudio.self).filter("user.id == \(user?.id ?? 0)"))
+        for i in studioArray.indices.reversed(){
+            for j in myStudios.indices{
+                if studioArray[i].id == myStudios[j].studio?.id{
+                    studioArray.remove(at: i)
+                    break
+                }
+            }
         }
         
         studioArray = studioArray.filter { studio in
@@ -446,6 +457,16 @@ extension searchFlatsViewController: UITableViewDelegate, UITableViewDataSource{
         var studioArray:[Studio] = []
         for userStuio in userStudios{
             studioArray.append(userStuio.studio ?? Studio())
+        }
+        
+        let myStudios = Array(realm.objects(UserStudio.self).filter("user.id == \(user?.id ?? 0)"))
+        for i in studioArray.indices.reversed(){
+            for j in myStudios.indices{
+                if studioArray[i].id == myStudios[j].studio?.id{
+                    studioArray.remove(at: i)
+                    break
+                }
+            }
         }
         
         studioArray = studioArray.filter { studio in
@@ -584,6 +605,17 @@ extension searchFlatsViewController: UITableViewDelegate, UITableViewDataSource{
             for userStuio in userStudios{
                 studioArray.append(userStuio.studio ?? Studio())
             }
+            
+            let myStudios = Array(realm.objects(UserStudio.self).filter("user.id == \(user?.id ?? 0)"))
+            for i in studioArray.indices.reversed(){
+                for j in myStudios.indices{
+                    if studioArray[i].id == myStudios[j].studio?.id{
+                        studioArray.remove(at: i)
+                        break
+                    }
+                }
+            }
+            
             studioArray = studioArray.filter { studio in
                 if studio.price > startPrice{
                     if studio.price < endPrice{

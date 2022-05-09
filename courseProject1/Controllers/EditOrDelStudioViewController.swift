@@ -101,6 +101,8 @@ class EditOrDelStudioViewController: UIViewController {
     @IBAction func deleteButtonPressed(_ sender: UIButton) {
         realm.beginWrite()
         guard let studio = realm.objects(Studio.self).filter("id == \(id)").first else { return }
+        let userStudio = realm.objects(UserStudio.self).filter("studio.id == \(studio.id)").first ?? UserStudio()
+        realm.delete(userStudio)
         realm.delete(studio)
         try! realm.commitWrite()
         
