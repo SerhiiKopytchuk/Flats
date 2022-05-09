@@ -59,11 +59,16 @@ extension MyFlatsViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let user = realm.objects(User.self).filter("current == true").first
         
+        let studioArray = User.getMyStudios()
+
+
+        
+        
         switch section{
         case 0:
             return user?.flats.count ?? 0
         case 1:
-            return user?.studios.count ?? 0
+            return studioArray.count
         default:
             return 0
         }
@@ -80,9 +85,11 @@ extension MyFlatsViewController: UITableViewDelegate, UITableViewDataSource{
             let flatImage = Manager.shared.retrieveImage(forKey: "\(flat?.id ?? 0)FlatImage", inStorageType: .fileSystem)
             cell.configuration(name: flat?.name ?? "" , price: String(flat?.price ?? 0) + "$" ,image: flatImage ?? UIImage())
         case 1:
-            let studio = user?.studios[indexPath.row]
-            let studioImage = Manager.shared.retrieveImage(forKey: "\(studio?.id ?? 0)StudioImage", inStorageType: .fileSystem)
-            cell.configuration(name: studio?.name ?? "" , price: String(studio?.price ?? 0) + "$" ,image: studioImage ?? UIImage())
+            
+            let studioArray = User.getMyStudios()
+            let studio = studioArray[indexPath.row]
+            let studioImage = Manager.shared.retrieveImage(forKey: "\(studio.id )StudioImage", inStorageType: .fileSystem)
+            cell.configuration(name: studio.name ?? "" , price: String(studio.price ) + "$" ,image: studioImage ?? UIImage())
         default:
             return cell
         }
@@ -103,9 +110,9 @@ extension MyFlatsViewController: UITableViewDelegate, UITableViewDataSource{
             self.navigationController?.pushViewController(controller, animated: true)
         case 1:
             let controller = self.storyboard?.instantiateViewController(withIdentifier:  "EditOrDelStudioViewController") as! EditOrDelStudioViewController
-            let user = realm.objects(User.self).filter("current == true").first
-            let studio = user?.studios[indexPath.row]
-            controller.id = studio?.id ?? 0
+            let studioArray = User.getMyStudios()
+            let studio = studioArray[indexPath.row]
+            controller.id = studio.id
             self.navigationController?.pushViewController(controller, animated: true)
         default:
             return

@@ -20,10 +20,9 @@ class buyStudioViewController: UIViewController {
     @IBOutlet weak var buildingLabel: UILabel!
     @IBOutlet weak var flatLabel: UILabel!
     @IBOutlet weak var florLabel: UILabel!
-    @IBOutlet weak var ownerNumberLabel: UILabel!
     @IBOutlet weak var createdDateLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var ownerButton: UIButton!
+    @IBOutlet weak var ownersLabel: UILabel!
     @IBOutlet weak var studioImageView: UIImageView!
 
     @IBOutlet weak var canContainPersonLabel: UILabel!
@@ -54,23 +53,23 @@ class buyStudioViewController: UIViewController {
             case 1:
                 let user = self.realm.objects(User.self).filter("current == true").first
                 let studio = self.realm.objects(Studio.self).filter("id == \(self.id)").first
-                self.realm.beginWrite()
-                
-                
-                var index = 0
-                guard let FormerOwner:User = studio?.owner else {return}
-                
-                for i in FormerOwner.studios.indices{
-                    if FormerOwner.studios[i].id == studio?.id{
-                        index = i
+                let myStudios = User.getMyStudios()
+                for myStudio in myStudios {
+                    if myStudio.id == studio?.id{
+                        self.presentAlertWithTitle(title: "Congratulations", message: "You already have this stuio", options: "okey") { number in
+                            return
+                        }
+                        return
                     }
                 }
+                self.realm.beginWrite()
                 
-                FormerOwner.studios.remove(at: index)
-                
-                studio?.ownerId = user?.id ?? 0
-                studio!.owner = user
-                user?.studios.append(studio ?? Studio())
+                let userStudio = UserStudio()
+                let userStudioCount = self.realm.objects(UserStudio.self).count
+                userStudio.UserStudioId = userStudioCount
+                userStudio.user = user
+                userStudio.studio = studio
+                self.realm.add(userStudio)
                 try! self.realm.commitWrite()
                 guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "CongratulationsViewController") as? CongratulationsViewController else{ return }
                 self.navigationController?.pushViewController(controller, animated: true)
@@ -83,7 +82,7 @@ class buyStudioViewController: UIViewController {
     
     func strartSetup(){
         let studio = realm.objects(Studio.self).filter("id == \(id)").first
-        let owner = realm.objects(User.self).filter("id == \(studio?.ownerId ?? 0)").first
+
         
         studioNameLabel.text = studio?.name
         aboutLabel.text = studio?.about
@@ -94,7 +93,7 @@ class buyStudioViewController: UIViewController {
         buildingLabel.text = String(studio?.BuildingNum ?? 0)
         flatLabel.text = String(studio?.FlatNum ?? 0)
         florLabel.text = String(studio?.floorNum ?? 0)
-        ownerNumberLabel.text = String(owner?.phoneNumber ?? 0)
+        
         canContainPersonLabel.text = String(studio?.peopleCapacity ?? 0)
         
         switch studio?.haveRelaxRoom{
@@ -115,16 +114,19 @@ class buyStudioViewController: UIViewController {
             break
         }
         
+        var owners = ""
+        let userStudios = realm.objects(UserStudio.self).filter("studio.id == \(id)")
+        for userStudio in userStudios{
+            owners += userStudio.user?.name ?? ""
+            owners += ", "
+        }
+        owners.removeLast(2)
+        ownersLabel.text = owners
+        
+        
         
         studioImageView.image = Manager.shared.retrieveImage(forKey: "\(studio?.id ?? 0)StudioImage", inStorageType: .fileSystem)
         
-        var number:String = String(ownerNumberLabel.text ?? "")
-        number.removeLast(2)
-        if number == "0"{
-            ownerNumberLabel.text = "Uesr haven't number"
-        }else{
-            ownerNumberLabel.text = number
-        }
     
         let formatter = DateFormatter()
         formatter.dateFormat = "MMM d, HH:mm"
@@ -133,9 +135,6 @@ class buyStudioViewController: UIViewController {
         priceLabel.text = String(studio?.price ?? 0)
         priceLabel.text! += " $"
         
-//        ownerButton.titleLabel?.text = owner?.name
-        ownerButton.setTitle(owner?.name, for: .normal)
-
     }
     
     func checkForZeros(){
@@ -154,25 +153,9 @@ class buyStudioViewController: UIViewController {
         if florLabel.text == "0"{
             florLabel.text = ""
         }
-        if ownerNumberLabel.text == "0.0"{
-            ownerNumberLabel.text = "NoNumber"
-        }
         if priceLabel.text == "0 $"{
             priceLabel.text = "NoData"
         }
     }
-    
-    @IBAction func ownerButtonPressed(_ sender: UIButton) {
-        if fromUser {
-            self.navigationController?.popViewController(animated: true)
-            return
-        }
-        let studio = realm.objects(Studio.self).filter("id == \(id)").first
-        let owner = realm.objects(User.self).filter("id == \(studio?.ownerId ?? 0)").first
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: "userViewController") as! userViewController
-        controller.userId = owner?.id ?? 0
-        self.navigationController?.pushViewController(controller, animated: true)
-    }
-    
 
 }

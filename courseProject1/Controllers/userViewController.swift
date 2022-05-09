@@ -71,11 +71,13 @@ extension userViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let user = realm.objects(User.self).filter("id == \(userId)").first
+        let studios = User.getUserStudios(user: user)
+        
         switch section{
         case 0:
             return user?.flats.count ?? 0
         case 1:
-            return user?.studios.count ?? 0
+            return studios.count 
         default:
             return 0
         }
@@ -92,9 +94,12 @@ extension userViewController: UITableViewDelegate, UITableViewDataSource{
             cell.mainLabel.text = flat?.name
             cell.priceLabel.text = String(flat?.price ?? 0) + "$"
         case 1:
-            let studio = user?.studios[indexPath.row]
-            cell.mainLabel.text = studio?.name
-            cell.priceLabel.text = String(studio?.price ?? 0) + "$"
+            
+            let studios = User.getUserStudios(user: user)
+            let studio = studios[indexPath.row]
+            
+            cell.mainLabel.text = studio.name
+            cell.priceLabel.text = String(studio.price ) + "$"
         default:
             break
         }
@@ -119,8 +124,11 @@ extension userViewController: UITableViewDelegate, UITableViewDataSource{
             let controller = self.storyboard?.instantiateViewController(withIdentifier:  "buyStudioViewController") as! buyStudioViewController
             controller.fromUser = true
             let user = realm.objects(User.self).filter("id == \(userId)").first
-            let studio = user?.studios[indexPath.row]
-            controller.id = studio?.id ?? 0
+            
+            let studios = User.getUserStudios(user: user)
+            let studio = studios[indexPath.row]
+            
+            controller.id = studio.id
 
             self.navigationController?.pushViewController(controller, animated: true)
         default:
