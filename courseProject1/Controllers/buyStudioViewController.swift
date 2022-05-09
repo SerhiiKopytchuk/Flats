@@ -53,6 +53,15 @@ class buyStudioViewController: UIViewController {
             case 1:
                 let user = self.realm.objects(User.self).filter("current == true").first
                 let studio = self.realm.objects(Studio.self).filter("id == \(self.id)").first
+                let myStudios = User.getMyStudios()
+                for myStudio in myStudios {
+                    if myStudio.id == studio?.id{
+                        self.presentAlertWithTitle(title: "Congratulations", message: "You already have this stuio", options: "okey") { number in
+                            return
+                        }
+                        return
+                    }
+                }
                 self.realm.beginWrite()
                 
                 let userStudio = UserStudio()

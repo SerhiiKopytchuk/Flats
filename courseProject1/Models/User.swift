@@ -42,4 +42,14 @@ class User: Object{
         }
         return studioArray
     }
+    
+    static internal func getUserStudios(user:User? = User())->[Studio]{
+        let realm = try! Realm()
+        let userStudios = realm.objects(UserStudio.self).filter("user.id == \(user?.id ?? 0)")
+        var studioArray:[Studio] = []
+        for userStuio in userStudios{
+            studioArray.append(userStuio.studio ?? Studio())
+        }
+        return studioArray
+    }
 }
