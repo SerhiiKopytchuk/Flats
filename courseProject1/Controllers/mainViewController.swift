@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import LocalAuthentication
 
 class mainViewController: UIViewController {
     
@@ -38,24 +39,15 @@ class mainViewController: UIViewController {
         super.viewDidAppear(animated)
         let realm = try! Realm()
         
-        guard let user = realm.objects(User.self).filter("current == true").first else{
+        guard let _ = realm.objects(User.self).filter("current == true").first else{
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "ViewController" ) as! ViewController
             self.navigationController?.pushViewController(controller, animated: true)
             return
         }
         
         
-        if user.isAutorized == false{
-            if user.appPassword == ""{
-                let controller = self.storyboard?.instantiateViewController(withIdentifier: "passwordViewController") as! passwordViewController
-                controller.text = "set password"
-                self.navigationController?.pushViewController(controller, animated: false)
-            }else{
-                let controller = self.storyboard?.instantiateViewController(withIdentifier: "passwordViewController") as! passwordViewController
-                controller.text = "password"
-                self.navigationController?.pushViewController(controller, animated: false)
-            }
-        }
+        
+            
     }
     
     @IBAction func UsersButtonPressed(_ sender: UIButton) {

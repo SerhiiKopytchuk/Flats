@@ -124,12 +124,20 @@ class CreateStudioViewController: UIViewController {
 
         studio.ownerId = ownerId
         studio.owner = user
+        
+        let UserStudioCount = realm.objects(UserStudio.self).count
+        
+        let userStudio = UserStudio()
+        userStudio.user = user ?? User()
+        userStudio.studio = studio
+        userStudio.UserStudioId = UserStudioCount
 
     
         
         realm.beginWrite()
         user?.studios.append(studio)
         realm.add(studio)
+        realm.add(userStudio)
         try! realm.commitWrite()
         
         self.navigationController?.popToRootViewController(animated: true)
