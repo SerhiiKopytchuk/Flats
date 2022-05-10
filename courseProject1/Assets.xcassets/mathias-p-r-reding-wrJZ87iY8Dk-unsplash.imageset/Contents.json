@@ -1,11 +1,14 @@
 {
   "images" : [
     {
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "mathias-p-r-reding-wrJZ87iY8Dk-unsplash.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "mathias-p-r-reding-wrJZ87iY8Dk-unsplash.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },

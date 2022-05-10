@@ -1,11 +1,14 @@
 {
   "images" : [
     {
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "mario-esposito-eEAhGPBRDAY-unsplash.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "mario-esposito-eEAhGPBRDAY-unsplash.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },

@@ -1,11 +1,14 @@
 {
   "images" : [
     {
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "sincerely-media-0KwFuwdW7pU-unsplash.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "sincerely-media-0KwFuwdW7pU-unsplash.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },

@@ -1,11 +1,14 @@
 {
   "images" : [
     {
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "mohsen-ameri-4Koq7eEoJZE-unsplash.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "mohsen-ameri-4Koq7eEoJZE-unsplash.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },

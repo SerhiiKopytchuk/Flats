@@ -1,11 +1,14 @@
 {
   "images" : [
     {
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "bady-abbas-hxi_yRxODNc-unsplash.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "bady-abbas-hxi_yRxODNc-unsplash.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
