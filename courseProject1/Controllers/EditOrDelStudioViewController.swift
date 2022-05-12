@@ -101,13 +101,30 @@ class EditOrDelStudioViewController: UIViewController {
     @IBAction func deleteButtonPressed(_ sender: UIButton) {
         realm.beginWrite()
         guard let studio = realm.objects(Studio.self).filter("id == \(id)").first else { return }
+        let user = realm.objects(User.self).filter("current == true").first
         let userStudios = realm.objects(UserStudio.self)
+        var timeObj = 0
         for userStudio in userStudios{
             if userStudio.studio?.id == studio.id{
-                realm.delete(userStudio)
+                if userStudio.user?.id == user?.id{
+                    if timeObj == 0{
+                        realm.delete(userStudio)
+                        timeObj += 1
+                    }
+                }
             }
         }
-        realm.delete(studio)
+        var timeDel = 0
+        let userStudios1 = realm.objects(UserStudio.self)
+        for userStudio1 in userStudios1{
+            if userStudio1.studio?.id == studio.id{
+                timeDel += 1
+            }
+        }
+        
+        if timeDel == 0{
+            realm.delete(studio)
+        }
         try! realm.commitWrite()
         
         self.navigationController?.popViewController(animated: true)

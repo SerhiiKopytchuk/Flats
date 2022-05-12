@@ -67,15 +67,90 @@ class AccountViewController: UIViewController {
                 return
             case 1:
                 
-                let realm = try! Realm()
-                let users = realm.objects(User.self)
-                realm.beginWrite()
-                self.user = realm.objects(User.self).filter("current == true").first
-                users.realm?.delete(self.user ?? User())
-                try! realm.commitWrite()
                 
-                let controller = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-                self.navigationController?.pushViewController(controller, animated: true)
+                self.presentAlertWithTitle(title: "Delete flats and studios?", message: "Do you realy want to delete all your studios and flats?", options: "no", "yes") { (option) in
+                    switch (option){
+                    case 0:
+                        let realm = try! Realm()
+                        let users = realm.objects(User.self)
+                        realm.beginWrite()
+                        self.user = realm.objects(User.self).filter("current == true").first
+                        users.realm?.delete(self.user ?? User())
+                        try! realm.commitWrite()
+                        
+                        let controller = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+                        self.navigationController?.pushViewController(controller, animated: true)
+                    case 1:
+                        let realm = try! Realm()
+                        let user = realm.objects(User.self).filter("current == true").first
+        
+                        let flats = realm.objects(Flat.self).filter("owner.id == \(user?.id ?? 0)")
+                        for flat in flats{
+                            realm.beginWrite()
+                            realm.delete(flat)
+                            try! realm.commitWrite()
+                        }
+                        let userStudios = realm.objects(UserStudio.self).filter("user.id == \(user?.id ?? 0)")
+                        for userStudio in userStudios{
+                            var count = 0
+                            let userStudios1 = realm.objects(UserStudio.self).filter("user.id == \(user?.id ?? 0)")
+                            for userStudio1 in userStudios1{
+                                if userStudio.studio?.id == userStudio1.studio?.id{
+                                    count += 1
+                                }
+                            }
+                            realm.beginWrite()
+                            if count == 1{
+                                let studio = realm.objects(Studio.self).filter("id == \(userStudio.studio?.id ?? 0)")
+                                realm.delete(studio)
+                                realm.delete(userStudio)
+                            }else{
+                                realm.delete(userStudio)
+                            }
+                            try! realm.commitWrite()
+                            
+                        }
+                        
+                        
+
+                        let users = realm.objects(User.self)
+                        realm.beginWrite()
+                        self.user = realm.objects(User.self).filter("current == true").first
+                        users.realm?.delete(self.user ?? User())
+                        try! realm.commitWrite()
+                        
+                        let controller = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+                        self.navigationController?.pushViewController(controller, animated: true)
+//                        var timeObj = 0
+//                        for userStudio in userStudios{
+//
+//                                if userStudio.user?.id == user?.id{
+//                                    if timeObj == 0{
+//                                        realm.delete(userStudio)
+//                                        timeObj += 1
+//                                    }
+//                                }
+//
+//                        }
+//                        var timeDel = 0
+//                        let userStudios1 = realm.objects(UserStudio.self)
+//                        for userStudio1 in userStudios1{
+//                            if userStudio1.studio?.id == studio.id{
+//                                timeDel += 1
+//                            }
+//                        }
+//
+//                        if timeDel == 0{
+//                            realm.delete(studio)
+//                        }
+//                        try!
+                    default:
+                        return
+                    }
+                    
+                }
+                
+                
             default:
                 return
             }
