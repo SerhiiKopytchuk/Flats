@@ -79,7 +79,7 @@ class CreateStudioViewController: UIViewController {
             return
         }
         
-        //check can we make convert to int
+//        check can we make convert to int
         if !canConvertToInt(){
             return
         }
