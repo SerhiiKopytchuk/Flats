@@ -1,11 +1,14 @@
 {
   "images" : [
     {
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "mitchell-luo-wFaEKXlJwqA-unsplash.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "mitchell-luo-wFaEKXlJwqA-unsplash.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },

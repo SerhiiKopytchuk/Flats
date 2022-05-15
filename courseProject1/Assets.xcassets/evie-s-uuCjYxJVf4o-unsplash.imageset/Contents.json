@@ -1,11 +1,14 @@
 {
   "images" : [
     {
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "evie-s-uuCjYxJVf4o-unsplash.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "evie-s-uuCjYxJVf4o-unsplash.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },

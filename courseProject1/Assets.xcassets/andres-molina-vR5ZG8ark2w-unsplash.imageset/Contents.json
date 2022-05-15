@@ -1,11 +1,14 @@
 {
   "images" : [
     {
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "andres-molina-vR5ZG8ark2w-unsplash.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "andres-molina-vR5ZG8ark2w-unsplash.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },

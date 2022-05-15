@@ -1,11 +1,14 @@
 {
   "images" : [
     {
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "milad-fakurian-GJKx5lhwU3M-unsplash.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "milad-fakurian-GJKx5lhwU3M-unsplash.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },

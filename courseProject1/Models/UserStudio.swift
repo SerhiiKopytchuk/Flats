@@ -9,10 +9,6 @@ import Foundation
 import RealmSwift
 
 class UserStudio: Object{
-
-    
-    
-
     
     @objc dynamic var UserStudioId = 0
     @objc dynamic var user:User?

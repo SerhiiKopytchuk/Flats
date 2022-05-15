@@ -31,6 +31,7 @@ class Studio:Flat{
         }
 
         let myStudios = Array(realm.objects(UserStudio.self).filter("user.id == \(user?.id ?? 0)"))
+        
         for i in studioArray.indices.reversed(){
             for j in myStudios.indices{
                 if studioArray[i].id == myStudios[j].studio?.id{

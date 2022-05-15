@@ -1,11 +1,14 @@
 {
   "images" : [
     {
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "daniele-levis-pelusi-mkMSXR86kYY-unsplash.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "daniele-levis-pelusi-mkMSXR86kYY-unsplash.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
