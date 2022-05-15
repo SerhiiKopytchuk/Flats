@@ -14,7 +14,7 @@ class AccountViewController: UIViewController {
     @IBOutlet weak var NewPasswordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var phoneNumberTextField: UITextField!
-
+    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var profileImageView: UIImageView!
@@ -22,7 +22,7 @@ class AccountViewController: UIViewController {
     
     var user:User?
     
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +40,7 @@ class AccountViewController: UIViewController {
         
         nameTextField.text = user?.name
         
-
+        
         
         if user?.phoneNumber != 0.0{
             var number:String = String(user!.phoneNumber)
@@ -58,7 +58,7 @@ class AccountViewController: UIViewController {
         showPicker()
     }
     
-
+    
     
     @IBAction func deleteAccountButtonPressed(_ sender: UIButton) {
         presentAlertWithTitle(title: "Delete account", message: "Do you realy want to delete account?", options: "no", "yes") { (option) in
@@ -67,7 +67,41 @@ class AccountViewController: UIViewController {
                 return
             case 1:
                 
+                
+                
                 let realm = try! Realm()
+                let user = realm.objects(User.self).filter("current == true").first
+                
+                let flats = realm.objects(Flat.self).filter("owner.id == \(user?.id ?? 0)")
+                for flat in flats{
+                    realm.beginWrite()
+                    realm.delete(flat)
+                    try! realm.commitWrite()
+                }
+                //
+                
+                let userStudios = Array(realm.objects(UserStudio.self).filter("user.id == \(user?.id ?? 0)"))
+                var studios:[Studio] = []
+                for userStudio in userStudios{
+                    studios.append(userStudio.studio ?? Studio())
+                }
+                for studio in studios {
+                    let userStudioCount = realm.objects(UserStudio.self).filter("studio.id == \(studio.id )").count
+                    if userStudioCount > 1{
+                        let userStudioToDel = realm.objects(UserStudio.self).filter("studio.id == \(studio.id )").filter("user.id == \(user?.id ?? 0)").first
+                        realm.beginWrite()
+                        realm.delete(userStudioToDel ?? UserStudio())
+                        try! realm.commitWrite()
+                    }else{
+                        let userStudioToDel = realm.objects(UserStudio.self).filter("studio.id == \(studio.id )").first
+                        realm.beginWrite()
+                        realm.delete(userStudioToDel ?? UserStudio())
+                        realm.delete(studio)
+                        try! realm.commitWrite()
+                    }
+                }
+                
+                
                 let users = realm.objects(User.self)
                 realm.beginWrite()
                 self.user = realm.objects(User.self).filter("current == true").first
@@ -76,6 +110,12 @@ class AccountViewController: UIViewController {
                 
                 let controller = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
                 self.navigationController?.pushViewController(controller, animated: true)
+                
+                
+                
+                
+                
+                
             default:
                 return
             }
@@ -164,7 +204,7 @@ class AccountViewController: UIViewController {
     }
     
     
-
+    
     
     
     private func registerForKeyboardNotifications() {
