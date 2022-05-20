@@ -988,7 +988,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="1702"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mitchell-luo-wFaEKXlJwqA-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="0IV-bK-Oue">
-                                        <rect key="frame" x="-783.33333333333337" y="-300" width="1980.666666666667" height="2439"/>
+                                        <rect key="frame" x="-1773.6666666666667" y="-300" width="3961.3333333333339" height="2439"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u1T-Om-ydv">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
@@ -1664,7 +1664,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="1800"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mitchell-luo-wFaEKXlJwqA-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="A5v-2q-5ex">
-                                        <rect key="frame" x="-783.33333333333337" y="-300" width="1980.666666666667" height="2400"/>
+                                        <rect key="frame" x="-1773.6666666666667" y="-300" width="3961.3333333333339" height="2400"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HW1-Pl-O37">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
@@ -2698,7 +2698,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="415" height="1200"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mitchell-luo-wFaEKXlJwqA-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="1Mv-3R-vyg">
-                                        <rect key="frame" x="-782.66666666666663" y="-300" width="1980.333333333333" height="2431.6666666666665"/>
+                                        <rect key="frame" x="-1773" y="-300" width="3961" height="2431.6666666666665"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0S7-gA-3wI">
                                         <rect key="frame" x="0.0" y="0.0" width="415" height="70"/>
@@ -3480,7 +3480,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="1702"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mitchell-luo-wFaEKXlJwqA-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="By5-6O-Ul1">
-                                        <rect key="frame" x="-783.33333333333337" y="-300" width="1980.666666666667" height="2439"/>
+                                        <rect key="frame" x="-1773.6666666666667" y="-300" width="3961.3333333333339" height="2439"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bod-KK-dpI">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
@@ -3999,7 +3999,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="1800"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mitchell-luo-wFaEKXlJwqA-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="Wnw-NW-JzF">
-                                        <rect key="frame" x="-783.33333333333337" y="-300" width="1980.666666666667" height="2400"/>
+                                        <rect key="frame" x="-1773.6666666666667" y="-300" width="3961.3333333333339" height="2400"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HSX-c2-eeX">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
@@ -4460,7 +4460,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="415" height="1200"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mitchell-luo-wFaEKXlJwqA-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="pa2-Rr-kbP">
-                                        <rect key="frame" x="-782.66666666666663" y="-300" width="1980.333333333333" height="2431.6666666666665"/>
+                                        <rect key="frame" x="-1773" y="-300" width="3961" height="2431.6666666666665"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4MP-0A-KNx">
                                         <rect key="frame" x="0.0" y="0.0" width="415" height="70"/>
@@ -4992,22 +4992,22 @@
         </scene>
     </scenes>
     <resources>
-        <image name="alena-torgonskaya-IsoP2YmoYkk-unsplash" width="2218" height="3327"/>
-        <image name="andres-molina-vR5ZG8ark2w-unsplash" width="2000" height="3000"/>
+        <image name="alena-torgonskaya-IsoP2YmoYkk-unsplash" width="4436" height="6654"/>
+        <image name="andres-molina-vR5ZG8ark2w-unsplash" width="4000" height="6000"/>
         <image name="arrowDownGrey" width="158" height="120"/>
         <image name="arrowUpGrey" width="158" height="119"/>
-        <image name="bady-abbas-hxi_yRxODNc-unsplash" width="1726.5" height="2590"/>
-        <image name="evie-s-uuCjYxJVf4o-unsplash" width="2008" height="3008"/>
-        <image name="mathias-p-r-reding-wrJZ87iY8Dk-unsplash" width="2080" height="3120"/>
-        <image name="milad-fakurian-GJKx5lhwU3M-unsplash" width="4000" height="3000"/>
-        <image name="minus" catalog="system" width="128" height="24"/>
-        <image name="mitchell-luo-wFaEKXlJwqA-unsplash" width="1980.5" height="2965"/>
-        <image name="mohsen-ameri-4Koq7eEoJZE-unsplash" width="1920" height="2880"/>
-        <image name="person.fill.viewfinder" catalog="system" width="128" height="115"/>
-        <image name="photo" catalog="system" width="128" height="93"/>
-        <image name="photo.fill" catalog="system" width="128" height="93"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
-        <image name="sincerely-media-0KwFuwdW7pU-unsplash" width="1728" height="2304"/>
+        <image name="bady-abbas-hxi_yRxODNc-unsplash" width="3453" height="5180"/>
+        <image name="evie-s-uuCjYxJVf4o-unsplash" width="4016" height="6016"/>
+        <image name="mathias-p-r-reding-wrJZ87iY8Dk-unsplash" width="4160" height="6240"/>
+        <image name="milad-fakurian-GJKx5lhwU3M-unsplash" width="8000" height="6000"/>
+        <image name="minus" catalog="system" width="32" height="32"/>
+        <image name="mitchell-luo-wFaEKXlJwqA-unsplash" width="3961" height="5930"/>
+        <image name="mohsen-ameri-4Koq7eEoJZE-unsplash" width="3840" height="5760"/>
+        <image name="person.fill.viewfinder" catalog="system" width="32" height="32"/>
+        <image name="photo" catalog="system" width="32" height="32"/>
+        <image name="photo.fill" catalog="system" width="32" height="32"/>
+        <image name="plus" catalog="system" width="32" height="32"/>
+        <image name="sincerely-media-0KwFuwdW7pU-unsplash" width="3456" height="4608"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
