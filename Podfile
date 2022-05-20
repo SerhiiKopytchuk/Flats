@@ -7,7 +7,7 @@ target 'courseProject1' do
 
   # Pods for courseProject1
 
-pod 'RealmSwift'
+
 pod 'SPConfetti' 
 
 end

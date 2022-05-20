@@ -1,26 +1,16 @@
 PODS:
-  - Realm (10.22.0):
-    - Realm/Headers (= 10.22.0)
-  - Realm/Headers (10.22.0)
-  - RealmSwift (10.22.0):
-    - Realm (= 10.22.0)
   - SPConfetti (1.4.0)
 
 DEPENDENCIES:
-  - RealmSwift
   - SPConfetti
 
 SPEC REPOS:
   trunk:
-    - Realm
-    - RealmSwift
     - SPConfetti
 
 SPEC CHECKSUMS:
-  Realm: d9e4e5877095a6722145811f56fe89a531c9659d
-  RealmSwift: e4191b4b957fcfcbed23751ec65eec98f8173ab5
   SPConfetti: 4ba720ff652d960f59c3e4eadee2c0c3ef6ce9a4
 
-PODFILE CHECKSUM: 6e2461f7cdffdd7e295026028592018bedc56299
+PODFILE CHECKSUM: 0547447de02660848827ad4e34e5cc1e6d180fa7
 
 COCOAPODS: 1.11.3
