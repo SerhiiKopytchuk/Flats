@@ -8,14 +8,14 @@
 
 </p>
 
- ### :white_check_mark: login and registration
+ ### :white_check_mark: login and registration.
  ----
 
 <p float="left">
 <img width="475" alt="Screenshot 2022-06-18 at 19 04 49" src="https://user-images.githubusercontent.com/97970279/174494347-3ab0d14f-2835-43bb-ae97-4844a9060824.png">
 </p>
 
- ### :white_check_mark: Accessing your accounts using Flats App is now possible with the speed and security of Apple's Touch ID or Face ID
+ ### :white_check_mark: Accessing your accounts using Flats App is now possible with the speed and security of Apple's Touch ID or Face ID.
 ----
 
  <p float="left"> 
@@ -24,7 +24,7 @@
 
  </p>
 
- ### :white_check_mark: Organized creating and viewing post of sale acomodation
+ ### :white_check_mark: Organized creating and viewing post of sale acomodation.
  ----
  
  <p float="left">
@@ -41,7 +41,7 @@
 
 </p>
 
- ### :white_check_mark: Editing and profile viewing system
+ ### :white_check_mark: Editing and profile viewing system.
  ----
  
  ## Description
