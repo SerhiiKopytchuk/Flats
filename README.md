@@ -2,9 +2,9 @@
 
 <p float="left">
   
-<img width="300" alt="Screenshot 2022-06-18 at 19 07 09" src="https://user-images.githubusercontent.com/97970279/174494273-34db950c-0736-4fdd-8b10-f9b9c52a3fe0.png">
-<img width="300" alt="Screenshot 2022-06-18 at 19 07 17" src="https://user-images.githubusercontent.com/97970279/174494243-702ab943-d792-4d73-ad1f-ca04a78817e6.png">
-<img width="300" alt="Screenshot 2022-06-18 at 19 07 12" src="https://user-images.githubusercontent.com/97970279/174494228-e0ba3128-641f-4f90-93f9-d2d6338ef9a1.png">
+<img width="375" alt="Screenshot 2022-06-18 at 19 07 09" src="https://user-images.githubusercontent.com/97970279/174494273-34db950c-0736-4fdd-8b10-f9b9c52a3fe0.png">
+<img width="375" alt="Screenshot 2022-06-18 at 19 07 17" src="https://user-images.githubusercontent.com/97970279/174494243-702ab943-d792-4d73-ad1f-ca04a78817e6.png">
+<img width="375" alt="Screenshot 2022-06-18 at 19 07 12" src="https://user-images.githubusercontent.com/97970279/174494228-e0ba3128-641f-4f90-93f9-d2d6338ef9a1.png">
 
 </p>
 
