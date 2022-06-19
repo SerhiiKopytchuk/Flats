@@ -51,7 +51,7 @@
   After, user can post a sell offer, or search something to buy it.
   Aditionaly, app provides, friends system, viewing and editing profile.
   To store images app use system disk.
-  App use Ralm-Swift DataBase to store objects
+  App use Ralm-Swift DataBase to store objects.
   
  ----
  ## Technologies
